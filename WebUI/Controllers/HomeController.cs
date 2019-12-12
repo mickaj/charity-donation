@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using WebUI.Data.Services.Interfaces;
 using WebUI.Models;
 
 namespace WebUI.Controllers
@@ -13,14 +14,18 @@ namespace WebUI.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IInstitutionsService _institutionsService;
+
+        public HomeController(ILogger<HomeController> logger, IInstitutionsService institutionsService)
         {
             _logger = logger;
+            _institutionsService = institutionsService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index([FromServices]IndexViewModel vm)
         {
-            return View();
+            vm.WhoWeHelpViewModel.AddInstitutions(_institutionsService.GetInstitutions());
+            return View(vm);
         }
 
         public IActionResult Privacy()

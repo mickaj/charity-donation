@@ -141,4 +141,10 @@
   <data name="sendButton" xml:space="preserve">
     <value>Wyślij</value>
   </data>
+  <data name="whoWeHelp" xml:space="preserve">
+    <value>Komu pomagamy?</value>
+  </data>
+  <data name="whoWeHelpBody" xml:space="preserve">
+    <value>W naszej bazie znajdziesz listę zweryfikowanych fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują.</value>
+  </data>
 </root>

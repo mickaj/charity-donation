@@ -1,0 +1,36 @@
+﻿@model WhoWeHelpViewModel
+
+<section id="help" class="help">
+    <h2>@Localizer["whoWeHelp"]</h2>
+
+    <!-- SLIDE 1 -->
+    <div class="help--slides active" data-id="1">
+        <p>
+            @Localizer["whoWeHelpBody"]
+        </p>
+
+        <ul class="help--slides-items">
+            @foreach (var pair in Model.Institutions)
+            {
+                <li>
+                    @if (pair.Item2 != null)
+                    {
+                        <div class="col">
+                            <div class="title">@pair.Item2.Name</div>
+                            <div class="subtitle">@pair.Item2.Description</div>
+                        </div>
+                    }
+
+                    @if (pair.Item1 != null)
+                    {
+                        <div class="col">
+                            <div class="title">@pair.Item1.Name</div>
+                            <div class="subtitle">@pair.Item1.Description</div>
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+
+</section>

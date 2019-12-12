@@ -13,6 +13,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebUI.Data;
+using WebUI.Data.Services;
+using WebUI.Data.Services.Interfaces;
+using WebUI.Models;
 
 namespace WebUI
 {
@@ -30,6 +33,13 @@ namespace WebUI
         {
             services.AddDbContext<CharityDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
 
+            // Data access services
+            services.AddScoped<IInstitutionsService, InstitutionsService>();
+
+            // View models
+            services.AddTransient<IndexViewModel>();
+            services.AddTransient<WhoWeHelpViewModel>();
+            
             services.AddControllersWithViews();
 
             services.AddLocalization(options => options.ResourcesPath = "");
