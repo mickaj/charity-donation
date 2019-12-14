@@ -12,25 +12,35 @@
         <ul class="help--slides-items">
             @foreach (var pair in Model.Institutions)
             {
-                <li>
-                    @if (pair.Item2 != null)
-                    {
-                        <div class="col">
-                            <div class="title">@pair.Item2.Name</div>
-                            <div class="subtitle">@pair.Item2.Description</div>
-                        </div>
-                    }
+                string name1 = pair.Item1 != null ? pair.Item1.Name : "\u00a0";
+                string desc1 = pair.Item1 != null ? pair.Item1.Description : "\u00a0";
+                string name2 = pair.Item2 != null ? pair.Item2.Name : "\u00a0";
+                string desc2 = pair.Item2 != null ? pair.Item2.Description : "\u00a0";
 
-                    @if (pair.Item1 != null)
-                    {
-                        <div class="col">
-                            <div class="title">@pair.Item1.Name</div>
-                            <div class="subtitle">@pair.Item1.Description</div>
-                        </div>
-                    }
+                <li>
+                    <div class="col">
+                        <div class="title">@name1</div>
+                        <div class="subtitle">@desc1</div>
+                    </div>
+                    <div class="col">
+                        <div class="title">@name2</div>
+                        <div class="subtitle">@desc2</div>
+                    </div>
                 </li>
             }
         </ul>
+
+        @if (Model.ShowAllLink)
+        {
+            <p>
+                <a id="showMoreButton" class="btn btn--small btn--without-border active" asp-action="ShowAllInstitutions"
+                   data-ajax="true"
+                   data-ajax-method="GET"
+                   data-ajax-complete="replaceContent(xhr, 'help')">
+                    @Localizer["showAllButton"]
+                </a>
+            </p>
+        }
     </div>
 
 </section>

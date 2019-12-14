@@ -9,5 +9,9 @@ namespace WebUI.Data.Services.Interfaces
     public interface IInstitutionsService
     {
         IReadOnlyList<Institution> GetInstitutions();
+
+        IReadOnlyList<Institution> GetRandomInstitutions(int qty);
+
+        int GetInstitutionsCount();
     }
 }

@@ -9,9 +9,12 @@ namespace WebUI.Models
     {
         public WhoWeHelpViewModel WhoWeHelpViewModel { get; set; }
 
-        public IndexViewModel(WhoWeHelpViewModel whoWeHelpViewModel)
+        public StatsViewModel StatsViewModel { get; set; }
+
+        public IndexViewModel(WhoWeHelpViewModel whoWeHelpViewModel, StatsViewModel statsViewModel)
         {
             WhoWeHelpViewModel = whoWeHelpViewModel;
+            StatsViewModel = statsViewModel;
         }
     }
 }

@@ -9,6 +9,9 @@ namespace WebUI.Models
     public class WhoWeHelpViewModel
     {
         private List<Institution> _institutions = new List<Institution>();
+
+        public bool ShowAllLink { get; set; } = false;
+
         public IEnumerable<Tuple<Institution, Institution>> Institutions 
         { 
             get

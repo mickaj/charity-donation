@@ -35,10 +35,12 @@ namespace WebUI
 
             // Data access services
             services.AddScoped<IInstitutionsService, InstitutionsService>();
+            services.AddScoped<IDonationsService, DonationsService>();
 
             // View models
             services.AddTransient<IndexViewModel>();
             services.AddTransient<WhoWeHelpViewModel>();
+            services.AddTransient<StatsViewModel>();
             
             services.AddControllersWithViews();
 

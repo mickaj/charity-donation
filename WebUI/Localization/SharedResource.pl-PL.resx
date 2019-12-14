@@ -138,8 +138,23 @@
   <data name="message" xml:space="preserve">
     <value>Wiadomość</value>
   </data>
+  <data name="numberOfDonatedBags" xml:space="preserve">
+    <value>Oddanych worków</value>
+  </data>
+  <data name="numberOfDonatedBagsDescription" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum tempora!</value>
+  </data>
+  <data name="numberOfRecieverInstitutions" xml:space="preserve">
+    <value>Wspartych organizacji</value>
+  </data>
+  <data name="numberOfRecieverInstitutionsDescription" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas quam.</value>
+  </data>
   <data name="sendButton" xml:space="preserve">
     <value>Wyślij</value>
+  </data>
+  <data name="showAllButton" xml:space="preserve">
+    <value>Pokaż wszystkie</value>
   </data>
   <data name="whoWeHelp" xml:space="preserve">
     <value>Komu pomagamy?</value>

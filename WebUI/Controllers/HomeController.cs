@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using WebUI.Data.Services.Interfaces;
 using WebUI.Models;
@@ -13,30 +15,46 @@ namespace WebUI.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        private readonly IConfiguration _configuration;
         private readonly IInstitutionsService _institutionsService;
+        private readonly IDonationsService _donationsService;
 
-        public HomeController(ILogger<HomeController> logger, IInstitutionsService institutionsService)
+        public HomeController(ILogger<HomeController> logger, IInstitutionsService institutionsService, IDonationsService donationsService, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
             _institutionsService = institutionsService;
+            _donationsService = donationsService;
         }
 
+        [HttpGet]
         public IActionResult Index([FromServices]IndexViewModel vm)
         {
-            vm.WhoWeHelpViewModel.AddInstitutions(_institutionsService.GetInstitutions());
+            int.TryParse(_configuration["AppSettings:NumberOfInstitutionsOnIndexPage"], out int numberOfInstitutions);
+            vm.WhoWeHelpViewModel.AddInstitutions(_institutionsService.GetRandomInstitutions(numberOfInstitutions));
+            vm.WhoWeHelpViewModel.ShowAllLink = _institutionsService.GetInstitutionsCount() > numberOfInstitutions;
+            vm.StatsViewModel.BagsDonatedQty = _donationsService.GetNumberOfDonatedBags();
+            vm.StatsViewModel.RecieversQty = _donationsService.GetNumberOfRecievers();
             return View(vm);
         }
 
+        [HttpGet]
         public IActionResult Privacy()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [HttpGet][ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpGet]
+        public IActionResult ShowAllInstitutions([FromServices]WhoWeHelpViewModel vm)
+        {
+            vm.AddInstitutions(_institutionsService.GetInstitutions());
+            return PartialView("_WhoWeHelpPartial", vm);
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿@model StatsViewModel
+
+<section id="stats" class="stats">
+    <div class="container container--85">
+        <div class="stats--item">
+            <em>@Model.BagsDonatedQty</em>
+            <h3>@Localizer["numberOfDonatedBags"]</h3>
+            <p>@Localizer["numberOfDonatedBagsDescription"]</p>
+        </div>
+
+        <div class="stats--item">
+            <em>@Model.RecieversQty</em>
+            <h3>@Localizer["numberOfRecieverInstitutions"]</h3>
+            <p>@Localizer["numberOfRecieverInstitutionsDescription"]</p>
+        </div>
+    </div>
+</section>
