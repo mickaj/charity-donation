@@ -1,7 +1,7 @@
 ﻿<ul id="navi" class="nav--actions">
     @if (!User.Identity.IsAuthenticated)
     {
-        <li><a href="" class="btn btn--small btn--without-border">@Localizer["loginButton"]</a></li>
+        <li><a asp-controller="Account" asp-action="Login" class="btn btn--small btn--without-border">@Localizer["loginButton"]</a></li>
         <li><a asp-controller="Account" asp-action="Register" class="btn btn--small btn--highlighted">@Localizer["signOnButton"]</a></li>
     }
     else

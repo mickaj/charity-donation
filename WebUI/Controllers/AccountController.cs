@@ -34,6 +34,13 @@ namespace WebUI.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Login()
+        {
+            if (User.Identity.IsAuthenticated) { return RedirectToAction("Index", "Home"); }
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Register([FromForm]RegisterInputModel model)
         {
