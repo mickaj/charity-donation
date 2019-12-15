@@ -115,6 +115,15 @@ namespace WebUI.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nieudana próba logowania!.
+        /// </summary>
+        public static string invalidLoginAttempt {
+            get {
+                return ResourceManager.GetString("invalidLoginAttempt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last name.
         /// </summary>
         public static string lastName {
@@ -165,6 +174,15 @@ namespace WebUI.Localization {
         public static string passwordsMustMatch {
             get {
                 return ResourceManager.GetString("passwordsMustMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember me?.
+        /// </summary>
+        public static string rememberMe {
+            get {
+                return ResourceManager.GetString("rememberMe", resourceCulture);
             }
         }
         

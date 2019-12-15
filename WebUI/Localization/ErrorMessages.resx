@@ -135,6 +135,9 @@
   <data name="invalidEmail" xml:space="preserve">
     <value>The {0} field is not a valid e-mail address.</value>
   </data>
+  <data name="invalidLoginAttempt" xml:space="preserve">
+    <value>Nieudana próba logowania!</value>
+  </data>
   <data name="lastName" xml:space="preserve">
     <value>Last name</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="passwordsMustMatch" xml:space="preserve">
     <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="rememberMe" xml:space="preserve">
+    <value>Remember me?</value>
   </data>
   <data name="repeatPasswordName" xml:space="preserve">
     <value>Confirm password</value>

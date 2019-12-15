@@ -183,6 +183,12 @@
   <data name="loginButton" xml:space="preserve">
     <value>Zaloguj</value>
   </data>
+  <data name="loginLine" xml:space="preserve">
+    <value>Zaloguj się</value>
+  </data>
+  <data name="loginSuccessMessage" xml:space="preserve">
+    <value>Udało się poprawnie zalogować!</value>
+  </data>
   <data name="logoutLink" xml:space="preserve">
     <value>Wyloguj</value>
   </data>
@@ -212,6 +218,9 @@
   </data>
   <data name="peopleAlt" xml:space="preserve">
     <value>Ludzie w kręgu</value>
+  </data>
+  <data name="recoverPasswordLink" xml:space="preserve">
+    <value>Odzyskaj hasło</value>
   </data>
   <data name="registerSuccessMessage" xml:space="preserve">
     <value>Rejestracja przebiegła pomyślnie i udało się zalogować!</value>

@@ -153,6 +153,9 @@
   <data name="passwordsMustMatch" xml:space="preserve">
     <value>Hasło oraz powtórzenie hasła muszą się zgadzać.</value>
   </data>
+  <data name="rememberMe" xml:space="preserve">
+    <value>Zapamiętaj mnie?</value>
+  </data>
   <data name="repeatPasswordName" xml:space="preserve">
     <value>Powtórz hasło</value>
   </data>

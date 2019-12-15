@@ -41,6 +41,14 @@ namespace WebUI.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            _logger.LogInformation("User loged out.");
+            return RedirectToAction("Index", "Home");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Register([FromForm]RegisterInputModel model)
         {
@@ -83,13 +91,39 @@ namespace WebUI.Controllers
             return PartialView("Register");
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Logout()
+        [HttpPost]
+        public async Task<IActionResult> Login([FromForm]LoginInputModel model)
         {
-            await _signInManager.SignOutAsync();
-            _logger.LogInformation("User loged out.");
-            return RedirectToAction("Index", "Home");
+            if (ModelState.IsValid)
+            {
+                // This doesn't count login failures towards account lockout
+                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: true);
+                if (result.Succeeded)
+                {
+                    _logger.LogInformation("User logged in.");
+                    return PartialView("_LoginSuccessPartial");
+                }
+                if (result.RequiresTwoFactor)
+                {
+                    return Content("2-Factor login not configured");
+                }
+                if (result.IsLockedOut)
+                {
+                    _logger.LogWarning("User account locked out.");
+                    return Content("This account is locked out.");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, ErrorMessages.invalidLoginAttempt);
+                    //return Page();
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return PartialView("Login");
         }
+
 
         [HttpGet]
         public IActionResult ReloadNavi()

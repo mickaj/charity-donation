@@ -28,7 +28,14 @@
             </div>
         </div>
 
-        <a asp-controller="Account" asp-action="Register" class="btn btn--large">@Localizer["createAccountButton"]</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="#" class="btn btn--large">@Localizer["donateLink"]</a>
+        }
+        else
+        {
+            <a asp-controller="Account" asp-action="Register" class="btn btn--large">@Localizer["createAccountButton"]</a>
+        }
     </section>
 
     <section id="about-us" class="about-us">
