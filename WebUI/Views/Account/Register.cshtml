@@ -5,7 +5,7 @@
     <form asp-controller="Account" asp-action="Register"
           data-ajax="true"
           data-ajax-method="POST"
-          data-ajax-complete="replaceContent(xhr, 'login-section')">
+          data-ajax-complete="replaceContent(xhr, 'login-section'); reloadNavi('navi')">
         <div class="form-group">
             <input asp-for="Email" placeholder="@Localizer["emailLabel"]" />
         </div>

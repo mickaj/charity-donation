@@ -1,0 +1,19 @@
+﻿<ul id="navi" class="nav--actions">
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <li><a href="" class="btn btn--small btn--without-border">@Localizer["loginButton"]</a></li>
+        <li><a asp-controller="Account" asp-action="Register" class="btn btn--small btn--highlighted">@Localizer["signOnButton"]</a></li>
+    }
+    else
+    {
+        <li class="logged-user">
+            @Localizer["hello"] @User.Identity.Name
+            <ul class="dropdown">
+                @*<li><a href="#">Profil</a></li>
+                    <li><a href="#">Ustawienia</a></li>
+                    <li><a href="#">Moje zbiórki</a></li>*@
+                <li><a href="#">@Localizer["logoutLink"]</a></li>
+            </ul>
+        </li>
+    }
+</ul>

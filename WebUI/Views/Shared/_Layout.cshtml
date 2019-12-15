@@ -1,7 +1,7 @@
 ﻿@model IndexViewModel
 
-@{ 
-    if(ViewBag.ShowSlogan == null) { ViewBag.ShowSlogan = false; } 
+@{
+    if (ViewBag.ShowSlogan == null) { ViewBag.ShowSlogan = false; }
     else { ViewBag.HeaderClass = "header--main-page"; }
 }
 
@@ -18,17 +18,8 @@
 <body>
     <header class="@ViewBag.HeaderClass">
         <nav class="container container--70">
-            <ul class="nav--actions">
-                @if (!User.Identity.IsAuthenticated)
-                {
-                    <li><a href="" class="btn btn--small btn--without-border">@Localizer["loginButton"]</a></li>
-                    <li><a asp-controller="Account" asp-action="Register" class="btn btn--small btn--highlighted">@Localizer["signOnButton"]</a></li>
-                }
-                else
-                {
-                    <li>Witaj użytkowniku!</li>
-                }
-            </ul>
+
+            <partial name="~/Views/Shared/_NavActionsPartial.cshtml">
 
             <ul>
                 <li><a href="" class="btn btn--without-border active">@Localizer["startLink"]</a></li>
@@ -40,7 +31,7 @@
             </ul>
         </nav>
 
-        @if(ViewBag.ShowSlogan == true)
+        @if (ViewBag.ShowSlogan == true)
         {
             <div class="slogan container container--90">
                 <div class="slogan--item">

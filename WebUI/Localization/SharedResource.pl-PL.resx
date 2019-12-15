@@ -171,6 +171,9 @@
   <data name="getInTouch" xml:space="preserve">
     <value>Skontaktuj się z nami</value>
   </data>
+  <data name="hello" xml:space="preserve">
+    <value>Witaj</value>
+  </data>
   <data name="institutionsLink" xml:space="preserve">
     <value>Fundacje i organizacje</value>
   </data>
@@ -179,6 +182,9 @@
   </data>
   <data name="loginButton" xml:space="preserve">
     <value>Zaloguj</value>
+  </data>
+  <data name="logoutLink" xml:space="preserve">
+    <value>Wyloguj</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>Wiadomość</value>
