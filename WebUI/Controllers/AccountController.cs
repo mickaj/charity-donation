@@ -6,10 +6,10 @@ using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using WebUI.Localization;
 using WebUI.Models;
 
 namespace WebUI.Controllers
@@ -37,8 +37,6 @@ namespace WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromForm]RegisterInputModel model)
         {
-            string returnUrl = Url.Content("~/");
-
             if (ModelState.IsValid)
             {
                 var user = new IdentityUser { UserName = model.Email, Email = model.Email };
@@ -70,12 +68,12 @@ namespace WebUI.Controllers
                 }
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    ModelState.AddModelError(string.Empty, ErrorMessages.ResourceManager.GetString(error.Code));
                 }
             }
 
             // If we got this far, something failed, redisplay form
-            return View();
+            return PartialView("Register");
         }
     }
 }

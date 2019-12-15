@@ -1,24 +1,26 @@
 ﻿@model RegisterInputModel
 
 <section id="login-section" class="login-page">
-<h2>Załóż konto</h2>
+    <h2>@Localizer["signOnLine"]</h2>
     <form asp-controller="Account" asp-action="Register"
           data-ajax="true"
           data-ajax-method="POST"
           data-ajax-complete="replaceContent(xhr, 'login-section')">
         <div class="form-group">
-            <input asp-for="Email" placeholder="Email" />
+            <input asp-for="Email" placeholder="@Localizer["emailLabel"]" />
         </div>
         <div class="form-group">
-            <input asp-for="Password" placeholder="Hasło" />
+            <input asp-for="Password" placeholder="@Localizer["passwordLabel"]" />
         </div>
         <div class="form-group">
-            <input asp-for="ConfirmPassword" placeholder="Powtórz hasło" />
+            <input asp-for="ConfirmPassword" placeholder="@Localizer["repeatPasswordLabel"]" />
         </div>
+        <div class="form-group" asp-validation-summary="All"></div>
+
 
         <div class="form-group form-group--buttons">
-            <a href="#" class="btn btn--without-border">Zaloguj się</a>
-            <button class="btn" type="submit">Załóż konto</button>
+            <a href="#" class="btn btn--without-border">@Localizer["loginButton"]</a>
+            <button class="btn" type="submit">@Localizer["Załóż konto"]</button>
         </div>
     </form>
 </section>

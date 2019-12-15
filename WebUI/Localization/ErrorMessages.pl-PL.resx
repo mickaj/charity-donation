@@ -117,142 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="aboutUsLine" xml:space="preserve">
-    <value>O nas</value>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>Podany użytkownik już istnieje.</value>
   </data>
-  <data name="aboutUsLink" xml:space="preserve">
-    <value>O nas</value>
-  </data>
-  <data name="aboutUsMessage" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.</value>
-  </data>
-  <data name="appTitle" xml:space="preserve">
-    <value>Oddam w dobre ręce</value>
-  </data>
-  <data name="availableCategories" xml:space="preserve">
-    <value>ubrania, zabawki, sprzęt i inne</value>
-  </data>
-  <data name="chooseCategories" xml:space="preserve">
-    <value>Wybierz rzeczy</value>
-  </data>
-  <data name="chooseTrustedInstitution" xml:space="preserve">
-    <value>wybierz zaufane miejsce</value>
-  </data>
-  <data name="collectionOnDate" xml:space="preserve">
-    <value>kurier przyjedzie w dogodnym terminie</value>
-  </data>
-  <data name="contactForm" xml:space="preserve">
-    <value>Formularz kontaktowy</value>
-  </data>
-  <data name="contactLink" xml:space="preserve">
-    <value>Kontakt</value>
-  </data>
-  <data name="copyrightCopy" xml:space="preserve">
-    <value>Copyright &amp;copy;</value>
-  </data>
-  <data name="createAccountButton" xml:space="preserve">
-    <value>Załóż konto</value>
-  </data>
-  <data name="decideWhoToHelp" xml:space="preserve">
-    <value>Zdecyduj komu chcesz pomóc</value>
-  </data>
-  <data name="donateLink" xml:space="preserve">
-    <value>Przekaż dary</value>
-  </data>
-  <data name="emailLabel" xml:space="preserve">
+  <data name="emailName" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="fieldCannotBeEmpty" xml:space="preserve">
+    <value>Pole "{0}" jest wymagane.</value>
+  </data>
+  <data name="fieldLength" xml:space="preserve">
+    <value>Pole "{0}" musi mieć długość z zakresu od {1} do {2} znaków.</value>
   </data>
   <data name="firstName" xml:space="preserve">
     <value>Imię</value>
   </data>
-  <data name="fourSteps" xml:space="preserve">
-    <value>Wystarczą 4 proste kroki</value>
-  </data>
-  <data name="getInTouch" xml:space="preserve">
-    <value>Skontaktuj się z nami</value>
-  </data>
-  <data name="institutionsLink" xml:space="preserve">
-    <value>Fundacje i organizacje</value>
+  <data name="invalidEmail" xml:space="preserve">
+    <value>Pole "{0}" nie jest prawidłowym adresem e-mail.</value>
   </data>
   <data name="lastName" xml:space="preserve">
     <value>Nazwisko</value>
   </data>
-  <data name="loginButton" xml:space="preserve">
-    <value>Zaloguj</value>
-  </data>
   <data name="message" xml:space="preserve">
     <value>Wiadomość</value>
   </data>
-  <data name="numberOfDonatedBags" xml:space="preserve">
-    <value>Oddanych worków</value>
-  </data>
-  <data name="numberOfDonatedBagsDescription" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum tempora!</value>
-  </data>
-  <data name="numberOfRecieverInstitutions" xml:space="preserve">
-    <value>Wspartych organizacji</value>
-  </data>
-  <data name="numberOfRecieverInstitutionsDescription" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas quam.</value>
-  </data>
-  <data name="orderPickUp" xml:space="preserve">
-    <value>Zamów kuriera</value>
-  </data>
-  <data name="packThem" xml:space="preserve">
-    <value>Spakuj je</value>
-  </data>
-  <data name="passwordLabel" xml:space="preserve">
+  <data name="passwordName" xml:space="preserve">
     <value>Hasło</value>
   </data>
-  <data name="peopleAlt" xml:space="preserve">
-    <value>Ludzie w kręgu</value>
+  <data name="PasswordRequiresDigit" xml:space="preserve">
+    <value>Hasło musi zawierać conajmniej jedną cyfrę.</value>
   </data>
-  <data name="registerSuccessMessage" xml:space="preserve">
-    <value>Rejestracja przebiegła pomyślnie i udało się zalogować!</value>
+  <data name="PasswordRequiresNonAlphanumeric" xml:space="preserve">
+    <value>Hasło musi zawierać conajmniej jeden znak nie będący literą bądź cyfrą.</value>
   </data>
-  <data name="repeatPasswordLabel" xml:space="preserve">
+  <data name="passwordsMustMatch" xml:space="preserve">
+    <value>Hasło oraz powtórzenie hasła muszą się zgadzać.</value>
+  </data>
+  <data name="repeatPasswordName" xml:space="preserve">
     <value>Powtórz hasło</value>
-  </data>
-  <data name="sendButton" xml:space="preserve">
-    <value>Wyślij</value>
-  </data>
-  <data name="showAllButton" xml:space="preserve">
-    <value>Pokaż wszystkie</value>
-  </data>
-  <data name="signatureAlt" xml:space="preserve">
-    <value>Podpis</value>
-  </data>
-  <data name="signOnButton" xml:space="preserve">
-    <value>Załóż konto</value>
-  </data>
-  <data name="signOnLine" xml:space="preserve">
-    <value>Załóż konto</value>
-  </data>
-  <data name="sloganLine" xml:space="preserve">
-    <value>Zacznij pomagać!</value>
-  </data>
-  <data name="sloganMessage" xml:space="preserve">
-    <value>Oddaj niechciane rzeczy w zaufane ręce.</value>
-  </data>
-  <data name="startLink" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="thankYouLine" xml:space="preserve">
-    <value>Dziękujemy!</value>
-  </data>
-  <data name="useBags" xml:space="preserve">
-    <value>skorzystaj z worków na śmieci</value>
-  </data>
-  <data name="whatIsItAboutLink" xml:space="preserve">
-    <value>O co chodzi?</value>
-  </data>
-  <data name="whoWeHelp" xml:space="preserve">
-    <value>Komu pomagamy?</value>
-  </data>
-  <data name="whoWeHelpBody" xml:space="preserve">
-    <value>W naszej bazie znajdziesz listę zweryfikowanych fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują.</value>
-  </data>
-  <data name="yourMessageHasBeenSent" xml:space="preserve">
-    <value>Twoja wiadomość została pomyślnie dostarczona do administratorów serwisu.</value>
   </data>
 </root>
