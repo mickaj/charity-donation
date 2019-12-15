@@ -18,13 +18,15 @@ namespace WebUI.Controllers
         private readonly IConfiguration _configuration;
         private readonly IInstitutionsService _institutionsService;
         private readonly IDonationsService _donationsService;
+        private readonly IMessagesService _messagesService;
 
-        public HomeController(ILogger<HomeController> logger, IInstitutionsService institutionsService, IDonationsService donationsService, IConfiguration configuration)
+        public HomeController(ILogger<HomeController> logger, IInstitutionsService institutionsService, IDonationsService donationsService, IMessagesService messagesService, IConfiguration configuration)
         {
             _logger = logger;
             _configuration = configuration;
             _institutionsService = institutionsService;
             _donationsService = donationsService;
+            _messagesService = messagesService;
         }
 
         [HttpGet]
@@ -55,6 +57,13 @@ namespace WebUI.Controllers
         {
             vm.AddInstitutions(_institutionsService.GetInstitutions());
             return PartialView("_WhoWeHelpPartial", vm);
+        }
+
+        [HttpPost]
+        public IActionResult PostMessage([FromForm]MessageData messageData)
+        {
+            _messagesService.AddMessage(messageData.Name, messageData.LastName, messageData.Message);
+            return PartialView("_MessagePostedPartial");
         }
     }
 }

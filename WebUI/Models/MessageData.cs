@@ -4,17 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebUI.Models.Interfaces
+namespace WebUI.Models
 {
-    public interface IMessagingFormData
+    public class MessageData
     {
         [Required]
-        string Name { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        string LastName { get; set; }
+        public string LastName { get; set; }
 
         [Required]
-        string Message { get; set; }
+        public string Message { get; set; }
     }
 }

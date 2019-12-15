@@ -222,6 +222,9 @@
   <data name="startLink" xml:space="preserve">
     <value>Start</value>
   </data>
+  <data name="thankYouLine" xml:space="preserve">
+    <value>Dziękujemy!</value>
+  </data>
   <data name="useBags" xml:space="preserve">
     <value>skorzystaj z worków na śmieci</value>
   </data>
@@ -233,5 +236,8 @@
   </data>
   <data name="whoWeHelpBody" xml:space="preserve">
     <value>W naszej bazie znajdziesz listę zweryfikowanych fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują.</value>
+  </data>
+  <data name="yourMessageHasBeenSent" xml:space="preserve">
+    <value>Twoja wiadomość została pomyślnie dostarczona do administratorów serwisu.</value>
   </data>
 </root>

@@ -1,4 +1,4 @@
-﻿@model IMessagingFormData
+﻿@model IndexViewModel
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -18,11 +18,14 @@
         <div id="contact" class="contact">
             <h2>@Localizer["getInTouch"]</h2>
             <h3>@Localizer["contactForm"]</h3>
-            <form class="form--contact">
-                <div class="form-group form-group--50"><input asp-for="Name" placeholder="@Localizer["firstName"]" /></div>
-                <div class="form-group form-group--50"><input asp-for="LastName" placeholder="@Localizer["lastName"]" /></div>
+            <form class="form--contact" asp-controller="Home" asp-action="PostMessage"
+                  data-ajax="true"
+                  data-ajax-method="POST"
+                  data-ajax-complete="replaceContent(xhr, 'contact')">
+                <div class="form-group form-group--50"><input asp-for="MessageData.Name" placeholder="@Localizer["firstName"]" /></div>
+                <div class="form-group form-group--50"><input asp-for="MessageData.LastName" placeholder="@Localizer["lastName"]" /></div>
 
-                <div class="form-group"><textarea asp-for="Message" placeholder="@Localizer["message"]" rows="1"></textarea></div>
+                <div class="form-group"><textarea asp-for="MessageData.Message" placeholder="@Localizer["message"]" rows="1"></textarea></div>
 
                 <div class="form-group" asp-validation-summary="All"></div>
 
