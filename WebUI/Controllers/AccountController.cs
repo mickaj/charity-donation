@@ -77,6 +77,14 @@ namespace WebUI.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            _logger.LogInformation("User loged out.");
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
         public IActionResult ReloadNavi()
         {
             return PartialView("~/Views/Shared/_NavActionsPartial.cshtml");
