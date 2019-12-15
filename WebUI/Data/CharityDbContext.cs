@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using WebUI.Data.DataModel;
 
 namespace WebUI.Data
 {
-    public class CharityDbContext : DbContext
+    public class CharityDbContext : IdentityDbContext
     {
         public DbSet<Category> Categories { get; set; }
 
