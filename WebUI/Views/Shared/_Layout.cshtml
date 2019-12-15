@@ -1,5 +1,10 @@
 ﻿@model IndexViewModel
 
+@{ 
+    if(ViewBag.ShowSlogan == null) { ViewBag.ShowSlogan = false; } 
+    else { ViewBag.HeaderClass = "header--main-page"; }
+}
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -7,13 +12,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>@Localizer["appTitle"]</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml">
 </head>
 <body>
+    <header class="@ViewBag.HeaderClass">
+        <nav class="container container--70">
+            <ul class="nav--actions">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li><a href="" class="btn btn--small btn--without-border">@Localizer["loginButton"]</a></li>
+                    <li><a asp-controller="Account" asp-action="Register" class="btn btn--small btn--highlighted">@Localizer["signOnButton"]</a></li>
+                }
+                else
+                {
+                    <li>Witaj użytkowniku!</li>
+                }
+            </ul>
+
+            <ul>
+                <li><a href="" class="btn btn--without-border active">@Localizer["startLink"]</a></li>
+                <li><a href="#steps" class="btn btn--without-border">@Localizer["whatIsItAboutLink"]</a></li>
+                <li><a href="#about-us" class="btn btn--without-border">@Localizer["aboutUsLink"]</a></li>
+                <li><a href="#help" class="btn btn--without-border">@Localizer["institutionsLink"]</a></li>
+                <li><a href="form.html" class="btn btn--without-border">@Localizer["donateLink"]</a></li>
+                <li><a href="#contact" class="btn btn--without-border">@Localizer["contactLink"]</a></li>
+            </ul>
+        </nav>
+
+        @if(ViewBag.ShowSlogan == true)
+        {
+            <div class="slogan container container--90">
+                <div class="slogan--item">
+                    <h1>
+                        @Localizer["sloganLine"]<br />
+                        @Localizer["sloganMessage"]
+                    </h1>
+                </div>
+            </div>
+        }
+    </header>
 
     @RenderBody()
-    
+
     <footer>
         <div id="contact" class="contact">
             <h2>@Localizer["getInTouch"]</h2>
@@ -36,7 +77,7 @@
         <div class="bottom-line">
             <span class="bottom-line--copy">@Localizer["copyrightCopy"] @DateTime.Now.Year</span>
             <div class="bottom-line--icons">
-                <a href="#" class="btn btn--small"><img src="images/icon-facebook.svg" /></a> <a href="#" class="btn btn--small"><img src="images/icon-instagram.svg" /></a>
+                <a href="#" class="btn btn--small"><img src="~/images/icon-facebook.svg" /></a> <a href="#" class="btn btn--small"><img src="~/images/icon-instagram.svg" /></a>
             </div>
         </div>
     </footer>

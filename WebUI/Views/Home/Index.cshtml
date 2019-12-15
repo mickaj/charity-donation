@@ -1,36 +1,6 @@
 ﻿@model IndexViewModel
 
-<header class="header--main-page">
-    <nav class="container container--70">
-        @if (true)
-        {
-            <ul class="nav--actions">
-                <li><a href="" class="btn btn--small btn--without-border">@Localizer["loginButton"]</a></li>
-                <li><a href="#" class="btn btn--small btn--highlighted">@Localizer["signOnButton"]</a></li>
-            </ul>
-        }
-
-        <ul>
-            <li><a href="" class="btn btn--without-border active">@Localizer["startLink"]</a></li>
-            <li><a href="#steps" class="btn btn--without-border">@Localizer["whatIsItAboutLink"]</a></li>
-            <li><a href="#about-us" class="btn btn--without-border">@Localizer["aboutUsLink"]</a></li>
-            <li><a href="#help" class="btn btn--without-border">@Localizer["institutionsLink"]</a></li>
-            <li><a href="form.html" class="btn btn--without-border">@Localizer["donateLink"]</a></li>
-            <li><a href="#contact" class="btn btn--without-border">@Localizer["contactLink"]</a></li>
-        </ul>
-    </nav>
-
-    <div class="slogan container container--90">
-        <div class="slogan--item">
-            <h1>
-                @Localizer["sloganLine"]<br />
-                @Localizer["sloganMessage"]
-            </h1>
-        </div>
-    </div>
-</header>
-
-    <partial name="_StatsPartial" model="@Model.StatsViewModel">
+<partial name="_StatsPartial" model="@Model.StatsViewModel">
 
     <section id="steps" class="steps">
         <h2>@Localizer["fourSteps"]</h2>

@@ -37,6 +37,8 @@ namespace WebUI.Controllers
             vm.WhoWeHelpViewModel.ShowAllLink = _institutionsService.GetInstitutionsCount() > numberOfInstitutions;
             vm.StatsViewModel.BagsDonatedQty = _donationsService.GetNumberOfDonatedBags();
             vm.StatsViewModel.RecieversQty = _donationsService.GetNumberOfRecievers();
+
+            ViewBag.ShowSlogan = true;
             return View(vm);
         }
 
