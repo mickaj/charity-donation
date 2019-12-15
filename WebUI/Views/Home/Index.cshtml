@@ -2,26 +2,29 @@
 
 <header class="header--main-page">
     <nav class="container container--70">
-        <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
-        </ul>
+        @if (true)
+        {
+            <ul class="nav--actions">
+                <li><a href="" class="btn btn--small btn--without-border">@Localizer["loginButton"]</a></li>
+                <li><a href="#" class="btn btn--small btn--highlighted">@Localizer["signOnButton"]</a></li>
+            </ul>
+        }
 
         <ul>
-            <li><a href="" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#steps" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="#about-us" class="btn btn--without-border">O nas</a></li>
-            <li><a href="#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="form.html" class="btn btn--without-border">Przekaż dary</a></li>
-            <li><a href="#contact" class="btn btn--without-border">Kontakt</a></li>
+            <li><a href="" class="btn btn--without-border active">@Localizer["startLink"]</a></li>
+            <li><a href="#steps" class="btn btn--without-border">@Localizer["whatIsItAboutLink"]</a></li>
+            <li><a href="#about-us" class="btn btn--without-border">@Localizer["aboutUsLink"]</a></li>
+            <li><a href="#help" class="btn btn--without-border">@Localizer["institutionsLink"]</a></li>
+            <li><a href="form.html" class="btn btn--without-border">@Localizer["donateLink"]</a></li>
+            <li><a href="#contact" class="btn btn--without-border">@Localizer["contactLink"]</a></li>
         </ul>
     </nav>
 
     <div class="slogan container container--90">
         <div class="slogan--item">
             <h1>
-                Zacznij pomagać!<br />
-                Oddaj niechciane rzeczy w zaufane ręce
+                @Localizer["sloganLine"]<br />
+                @Localizer["sloganMessage"]
             </h1>
         </div>
     </div>
@@ -30,41 +33,41 @@
     <partial name="_StatsPartial" model="@Model.StatsViewModel">
 
     <section id="steps" class="steps">
-        <h2>Wystarczą 4 proste kroki</h2>
+        <h2>@Localizer["fourSteps"]</h2>
 
         <div class="steps--container">
             <div class="steps--item">
                 <span class="icon icon--hands"></span>
-                <h3>Wybierz rzeczy</h3>
-                <p>ubrania, zabawki, sprzęt i inne</p>
+                <h3>@Localizer["chooseCategories"]</h3>
+                <p>@Localizer["availableCategories"]</p>
             </div>
             <div class="steps--item">
                 <span class="icon icon--arrow"></span>
-                <h3>Spakuj je</h3>
-                <p>skorzystaj z worków na śmieci</p>
+                <h3>@Localizer["packThem"]</h3>
+                <p>@Localizer["useBags"]</p>
             </div>
             <div class="steps--item">
                 <span class="icon icon--glasses"></span>
-                <h3>Zdecyduj komu chcesz pomóc</h3>
-                <p>wybierz zaufane miejsce</p>
+                <h3>@Localizer["decideWhoToHelp"]</h3>
+                <p>@Localizer["chooseTrustedInstitution"]</p>
             </div>
             <div class="steps--item">
                 <span class="icon icon--courier"></span>
-                <h3>Zamów kuriera</h3>
-                <p>kurier przyjedzie w dogodnym terminie</p>
+                <h3>@Localizer["orderPickUp"]</h3>
+                <p>@Localizer["collectionOnDate"]</p>
             </div>
         </div>
 
-        <a href="#" class="btn btn--large">Załóż konto</a>
+        <a href="#" class="btn btn--large">@Localizer["createAccountButton"]</a>
     </section>
 
     <section id="about-us" class="about-us">
         <div class="about-us--text">
-            <h2>O nas</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.</p>
-            <img src="images/signature.svg" class="about-us--text-signature" alt="Signature" />
+            <h2>@Localizer["aboutUsLine"]</h2>
+            <p>@Localizer["aboutUsMessage"]</p>
+            <img src="images/signature.svg" class="about-us--text-signature" alt="@Localizer["signatureAlt"]" />
         </div>
-        <div class="about-us--image"><img src="images/about-us.jpg" alt="People in circle" /></div>
+        <div class="about-us--image"><img src="images/about-us.jpg" alt="@Localizer["peopleAlt"]" /></div>
     </section>
 
     <partial name="_WhoWeHelpPartial" model="@Model.WhoWeHelpViewModel">

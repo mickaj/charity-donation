@@ -117,23 +117,65 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="aboutUsLine" xml:space="preserve">
+    <value>O nas</value>
+  </data>
+  <data name="aboutUsLink" xml:space="preserve">
+    <value>O nas</value>
+  </data>
+  <data name="aboutUsMessage" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.</value>
+  </data>
   <data name="appTitle" xml:space="preserve">
     <value>Oddam w dobre ręce</value>
+  </data>
+  <data name="availableCategories" xml:space="preserve">
+    <value>ubrania, zabawki, sprzęt i inne</value>
+  </data>
+  <data name="chooseCategories" xml:space="preserve">
+    <value>Wybierz rzeczy</value>
+  </data>
+  <data name="chooseTrustedInstitution" xml:space="preserve">
+    <value>wybierz zaufane miejsce</value>
+  </data>
+  <data name="collectionOnDate" xml:space="preserve">
+    <value>kurier przyjedzie w dogodnym terminie</value>
   </data>
   <data name="contactForm" xml:space="preserve">
     <value>Formularz kontaktowy</value>
   </data>
+  <data name="contactLink" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
   <data name="copyrightCopy" xml:space="preserve">
     <value>Copyright &amp;copy;</value>
+  </data>
+  <data name="createAccountButton" xml:space="preserve">
+    <value>Załóż konto</value>
+  </data>
+  <data name="decideWhoToHelp" xml:space="preserve">
+    <value>Zdecyduj komu chcesz pomóc</value>
+  </data>
+  <data name="donateLink" xml:space="preserve">
+    <value>Przekaż dary</value>
   </data>
   <data name="firstName" xml:space="preserve">
     <value>Imię</value>
   </data>
+  <data name="fourSteps" xml:space="preserve">
+    <value>Wystarczą 4 proste kroki</value>
+  </data>
   <data name="getInTouch" xml:space="preserve">
     <value>Skontaktuj się z nami</value>
   </data>
+  <data name="institutionsLink" xml:space="preserve">
+    <value>Fundacje i organizacje</value>
+  </data>
   <data name="lastName" xml:space="preserve">
     <value>Nazwisko</value>
+  </data>
+  <data name="loginButton" xml:space="preserve">
+    <value>Zaloguj</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>Wiadomość</value>
@@ -150,11 +192,41 @@
   <data name="numberOfRecieverInstitutionsDescription" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas quam.</value>
   </data>
+  <data name="orderPickUp" xml:space="preserve">
+    <value>Zamów kuriera</value>
+  </data>
+  <data name="packThem" xml:space="preserve">
+    <value>Spakuj je</value>
+  </data>
+  <data name="peopleAlt" xml:space="preserve">
+    <value>Ludzie w kręgu</value>
+  </data>
   <data name="sendButton" xml:space="preserve">
     <value>Wyślij</value>
   </data>
   <data name="showAllButton" xml:space="preserve">
     <value>Pokaż wszystkie</value>
+  </data>
+  <data name="signatureAlt" xml:space="preserve">
+    <value>Podpis</value>
+  </data>
+  <data name="signOnButton" xml:space="preserve">
+    <value>Zarejestruj się</value>
+  </data>
+  <data name="sloganLine" xml:space="preserve">
+    <value>Zacznij pomagać!</value>
+  </data>
+  <data name="sloganMessage" xml:space="preserve">
+    <value>Oddaj niechciane rzeczy w zaufane ręce.</value>
+  </data>
+  <data name="startLink" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="useBags" xml:space="preserve">
+    <value>skorzystaj z worków na śmieci</value>
+  </data>
+  <data name="whatIsItAboutLink" xml:space="preserve">
+    <value>O co chodzi?</value>
   </data>
   <data name="whoWeHelp" xml:space="preserve">
     <value>Komu pomagamy?</value>
