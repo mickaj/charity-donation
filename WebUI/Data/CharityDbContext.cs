@@ -15,6 +15,8 @@ namespace WebUI.Data
 
         public DbSet<Donation> Donations { get; set; }
 
+        public DbSet<Message> Messages { get; set; }
+
         public CharityDbContext(DbContextOptions<CharityDbContext> options)
             : base (options)
         {
