@@ -1,9 +1,9 @@
 ﻿@model IndexViewModel
 
 @{
-    if (ViewBag.ShowSlogan == null) { ViewBag.ShowSlogan = false; }
-    if (ViewBag.ShowFormSlogan == null) { ViewBag.ShowFormSlogan = false; }
-    else { ViewBag.HeaderClass = "header--main-page"; }
+    if (ViewBag.ShowSlogan == null) { ViewBag.ShowSlogan = false; } else { ViewBag.HeaderClass = "header--main-page"; }
+    if (ViewBag.ShowFormSlogan == null) { ViewBag.ShowFormSlogan = false; } else { ViewBag.HeaderClass = "header--form-page"; }
+
 }
 
 <!DOCTYPE html>
@@ -32,46 +32,7 @@
                 </ul>
         </nav>
 
-        @if (ViewBag.ShowSlogan == true)
-        {
-            <div class="slogan container container--90">
-                <div class="slogan--item">
-                    <h1>
-                        @Localizer["sloganLine"]<br />
-                        @Localizer["sloganMessage"]
-                    </h1>
-                </div>
-            </div>
-        }
-
-        @if (ViewBag.ShowFormSlogan == true)
-        {
-            <div class="slogan container container--90">
-                <div class="slogan--item">
-                    <h1>
-                        @Localizer["sloganFormLine"]
-                    </h1>
-
-                    <div class="slogan--steps">
-                        <div class="slogan--steps-title">@Localizer["fourStepsColon"]</div>
-                        <ul class="slogan--steps-boxes">
-                            <li>
-                                <div><em>1</em><span>@Localizer["chooseCategories"]</span></div>
-                            </li>
-                            <li>
-                                <div><em>2</em><span>@Localizer["packThemInBags"]</span></div>
-                            </li>
-                            <li>
-                                <div><em>3</em><span>@Localizer["chooseInstitution"]</span></div>
-                            </li>
-                            <li>
-                                <div><em>4</em><span>@Localizer["orderPickUp"]</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        }
+        <partial name="~/Views/Shared/_SlogansPartial.cshtml">
     </header>
 
     @RenderBody()
