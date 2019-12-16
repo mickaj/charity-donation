@@ -141,6 +141,9 @@
   <data name="chooseTrustedInstitution" xml:space="preserve">
     <value>wybierz zaufane miejsce</value>
   </data>
+  <data name="collectionDetailsForm" xml:space="preserve">
+    <value>Podaj adres oraz termin odbioru rzeczy.</value>
+  </data>
   <data name="collectionOnDate" xml:space="preserve">
     <value>kurier przyjedzie w dogodnym terminie</value>
   </data>
@@ -165,6 +168,10 @@
   <data name="emailLabel" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="fillDetailsForm" xml:space="preserve">
+    <value>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
+                wiedzieć komu najlepiej je przekazać.</value>
+  </data>
   <data name="firstName" xml:space="preserve">
     <value>Imię</value>
   </data>
@@ -179,6 +186,9 @@
   </data>
   <data name="hello" xml:space="preserve">
     <value>Witaj</value>
+  </data>
+  <data name="importantExclamation" xml:space="preserve">
+    <value>Ważne!</value>
   </data>
   <data name="institutionsLink" xml:space="preserve">
     <value>Fundacje i organizacje</value>
@@ -228,6 +238,10 @@
   <data name="peopleAlt" xml:space="preserve">
     <value>Ludzie w kręgu</value>
   </data>
+  <data name="pickOneInstitutionForm" xml:space="preserve">
+    <value>Wybierz jedną, do
+                której trafi Twoja przesyłka.</value>
+  </data>
   <data name="recoverPasswordLink" xml:space="preserve">
     <value>Odzyskaj hasło</value>
   </data>
@@ -266,6 +280,9 @@
   </data>
   <data name="thankYouLine" xml:space="preserve">
     <value>Dziękujemy!</value>
+  </data>
+  <data name="tickCategory" xml:space="preserve">
+    <value>Zaznacz co chcesz oddać:</value>
   </data>
   <data name="useBags" xml:space="preserve">
     <value>skorzystaj z worków na śmieci</value>

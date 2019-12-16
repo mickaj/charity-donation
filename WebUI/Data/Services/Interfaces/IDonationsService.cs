@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebUI.Data.DataModel;
 
 namespace WebUI.Data.Services.Interfaces
 {
@@ -10,5 +11,7 @@ namespace WebUI.Data.Services.Interfaces
         int GetNumberOfRecievers();
 
         int GetNumberOfDonatedBags();
+
+        IReadOnlyList<Category> GetCategories();
     }
 }

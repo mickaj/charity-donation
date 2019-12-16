@@ -47,6 +47,7 @@ namespace WebUI
             services.AddTransient<WhoWeHelpViewModel>();
             services.AddTransient<StatsViewModel>();
             services.AddTransient<MessageData>();
+            services.AddTransient<DonationFormModel>();
             
             services.AddControllersWithViews();
 

@@ -23,5 +23,10 @@ namespace WebUI.Data.Services
         {
             return _context.Donations.Select(r => r.Institution.Id).Distinct().Count();
         }
+
+        public IReadOnlyList<Category> GetCategories()
+        {
+            return _context.Categories.ToList().AsReadOnly();
+        }
     }
 }
