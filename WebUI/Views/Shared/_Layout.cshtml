@@ -2,6 +2,7 @@
 
 @{
     if (ViewBag.ShowSlogan == null) { ViewBag.ShowSlogan = false; }
+    if (ViewBag.ShowFormSlogan == null) { ViewBag.ShowFormSlogan = false; }
     else { ViewBag.HeaderClass = "header--main-page"; }
 }
 
@@ -21,14 +22,14 @@
 
             <partial name="~/Views/Shared/_NavActionsPartial.cshtml">
 
-            <ul>
-                <li><a asp-controller="Home" asp-action="Index" class="btn btn--without-border active">@Localizer["startLink"]</a></li>
-                <li><a href="/#steps" class="btn btn--without-border">@Localizer["whatIsItAboutLink"]</a></li>
-                <li><a href="/#about-us" class="btn btn--without-border">@Localizer["aboutUsLink"]</a></li>
-                <li><a href="/#help" class="btn btn--without-border">@Localizer["institutionsLink"]</a></li>
-                <li><a href="#" class="btn btn--without-border">@Localizer["donateLink"]</a></li>
-                <li><a href="/#contact" class="btn btn--without-border">@Localizer["contactLink"]</a></li>
-            </ul>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index" class="btn btn--without-border active">@Localizer["startLink"]</a></li>
+                    <li><a href="/#steps" class="btn btn--without-border">@Localizer["whatIsItAboutLink"]</a></li>
+                    <li><a href="/#about-us" class="btn btn--without-border">@Localizer["aboutUsLink"]</a></li>
+                    <li><a href="/#help" class="btn btn--without-border">@Localizer["institutionsLink"]</a></li>
+                    <li><a asp-controller="Donation" asp-action="Donate" class="btn btn--without-border">@Localizer["donateLink"]</a></li>
+                    <li><a href="/#contact" class="btn btn--without-border">@Localizer["contactLink"]</a></li>
+                </ul>
         </nav>
 
         @if (ViewBag.ShowSlogan == true)
@@ -39,6 +40,35 @@
                         @Localizer["sloganLine"]<br />
                         @Localizer["sloganMessage"]
                     </h1>
+                </div>
+            </div>
+        }
+
+        @if (ViewBag.ShowFormSlogan == true)
+        {
+            <div class="slogan container container--90">
+                <div class="slogan--item">
+                    <h1>
+                        @Localizer["sloganFormLine"]
+                    </h1>
+
+                    <div class="slogan--steps">
+                        <div class="slogan--steps-title">@Localizer["fourStepsColon"]</div>
+                        <ul class="slogan--steps-boxes">
+                            <li>
+                                <div><em>1</em><span>@Localizer["chooseCategories"]</span></div>
+                            </li>
+                            <li>
+                                <div><em>2</em><span>@Localizer["packThemInBags"]</span></div>
+                            </li>
+                            <li>
+                                <div><em>3</em><span>@Localizer["chooseInstitution"]</span></div>
+                            </li>
+                            <li>
+                                <div><em>4</em><span>@Localizer["orderPickUp"]</span></div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         }

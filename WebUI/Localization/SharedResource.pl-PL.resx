@@ -135,6 +135,9 @@
   <data name="chooseCategories" xml:space="preserve">
     <value>Wybierz rzeczy</value>
   </data>
+  <data name="chooseInstitution" xml:space="preserve">
+    <value>Wybierz fundację</value>
+  </data>
   <data name="chooseTrustedInstitution" xml:space="preserve">
     <value>wybierz zaufane miejsce</value>
   </data>
@@ -167,6 +170,9 @@
   </data>
   <data name="fourSteps" xml:space="preserve">
     <value>Wystarczą 4 proste kroki</value>
+  </data>
+  <data name="fourStepsColon" xml:space="preserve">
+    <value>Wystarczą 4 proste kroki:</value>
   </data>
   <data name="getInTouch" xml:space="preserve">
     <value>Skontaktuj się z nami</value>
@@ -213,6 +219,9 @@
   <data name="packThem" xml:space="preserve">
     <value>Spakuj je</value>
   </data>
+  <data name="packThemInBags" xml:space="preserve">
+    <value>Spakuj je w worki</value>
+  </data>
   <data name="passwordLabel" xml:space="preserve">
     <value>Hasło</value>
   </data>
@@ -242,6 +251,9 @@
   </data>
   <data name="signOnLine" xml:space="preserve">
     <value>Załóż konto</value>
+  </data>
+  <data name="sloganFormLine" xml:space="preserve">
+    <value>Oddaj rzeczy, których już nie chcesz&lt;br /&gt;&lt;span class="uppercase"&gt;potrzebującym&lt;/span&gt;</value>
   </data>
   <data name="sloganLine" xml:space="preserve">
     <value>Zacznij pomagać!</value>

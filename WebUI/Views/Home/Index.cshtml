@@ -30,7 +30,7 @@
 
         @if (User.Identity.IsAuthenticated)
         {
-            <a href="#" class="btn btn--large">@Localizer["donateLink"]</a>
+            <a asp-controller="Donation" asp-action="Donate" class="btn btn--large">@Localizer["donateLink"]</a>
         }
         else
         {

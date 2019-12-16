@@ -13,7 +13,8 @@ namespace WebUI.Controllers
         [HttpGet]
         public IActionResult Donate()
         {
-            return Content("donate form - get");
+            ViewBag.ShowFormSlogan = true;
+            return View();
         }
 
         [HttpPost]
