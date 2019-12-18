@@ -137,6 +137,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     $('#category-error-message').removeClass('d-none');
                 }
             }
+            else if (this.currentStep === 2) {
+                var numberOfBags = $('#NumberOfBags').val();
+                if (numberOfBags > 0) {
+                    $('#bags-error-message').addClass('d-none');
+                    this.currentStep++;
+                    this.updateForm();
+                }
+                else {
+                    $('#bags-error-message').removeClass('d-none');
+                }
+            }
             else {
                 this.currentStep++;
                 this.updateForm();

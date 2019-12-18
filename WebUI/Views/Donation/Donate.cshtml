@@ -61,8 +61,16 @@
                 <div class="form-group form-group--inline">
                     <label>
                         @Localizer["numberOfBags"]
-                        <input asp-for="NumberOfBags" min="@Model.MinNumberOfBags"/>
+                        <input asp-for="NumberOfBags" min="@Model.MinNumberOfBags" />
                     </label>
+                </div>
+
+                <div id="bags-error-message" class="d-none">
+                    <ul>
+                        <li>
+                            @Localizer["oneBagMin"]
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="form-group form-group--buttons">

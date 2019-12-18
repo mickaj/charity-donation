@@ -232,6 +232,9 @@
   <data name="numberOfRecieverInstitutionsDescription" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas quam.</value>
   </data>
+  <data name="oneBagMin" xml:space="preserve">
+    <value>Worków musi być conajmniej jeden.</value>
+  </data>
   <data name="orderPickUp" xml:space="preserve">
     <value>Zamów kuriera</value>
   </data>
