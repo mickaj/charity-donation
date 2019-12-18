@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using WebUI.Data.DataModel;
@@ -10,6 +11,11 @@ namespace WebUI.Models
     {
         private readonly List<Category> _categories = new List<Category>();
         public IReadOnlyList<CategoryViewModel> AvailableCategories { get => GetAvailableCategories(); }
+
+        [Range(1, int.MaxValue)]
+        public int NumberOfBags { get; set; } = 1;
+
+        public int MinNumberOfBags { get => 1; }
 
         public DonationFormModel(MessageData messageData)
             :base(messageData)

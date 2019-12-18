@@ -132,6 +132,9 @@
   <data name="availableCategories" xml:space="preserve">
     <value>ubrania, zabawki, sprzęt i inne</value>
   </data>
+  <data name="backButton" xml:space="preserve">
+    <value>Wstecz</value>
+  </data>
   <data name="chooseCategories" xml:space="preserve">
     <value>Wybierz rzeczy</value>
   </data>
@@ -211,6 +214,12 @@
   <data name="message" xml:space="preserve">
     <value>Wiadomość</value>
   </data>
+  <data name="nextButton" xml:space="preserve">
+    <value>Dalej</value>
+  </data>
+  <data name="numberOfBags" xml:space="preserve">
+    <value>Liczba 60l worków:</value>
+  </data>
   <data name="numberOfDonatedBags" xml:space="preserve">
     <value>Oddanych worków</value>
   </data>
@@ -238,9 +247,15 @@
   <data name="peopleAlt" xml:space="preserve">
     <value>Ludzie w kręgu</value>
   </data>
+  <data name="pickAtLeastOneCategory" xml:space="preserve">
+    <value>Musisz wybrać conajmniej jedną kategorię.</value>
+  </data>
   <data name="pickOneInstitutionForm" xml:space="preserve">
     <value>Wybierz jedną, do
                 której trafi Twoja przesyłka.</value>
+  </data>
+  <data name="provideNumberOfBags" xml:space="preserve">
+    <value>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</value>
   </data>
   <data name="recoverPasswordLink" xml:space="preserve">
     <value>Odzyskaj hasło</value>

@@ -457,6 +457,10 @@ h2:after {
   text-transform: uppercase;
 }
 
+.d-none {
+    display: none;
+}
+
 /* line 1, scss/modules/_buttons.scss */
 .btn {
   display: inline-block;

@@ -20,47 +20,56 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-        <form action="#" method="post">
+        <form id="donation-form" action="#" method="post">
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>@Localizer["tickCategory"]</h3>
 
-                @foreach (var cat in Model.AvailableCategories)
-                {
+                <div id="categories-checkbox-group">
+                    @foreach (var cat in Model.AvailableCategories)
+                    { 
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <input type="checkbox"
+                            <input type="checkbox" class="category-item"
                                    name="categories"
                                    value="@cat.Category.Id"
-                                   checked="@cat.IsChecked"/>
+                                   checked="@cat.IsChecked" />
                             <span class="checkbox"></span>
                             <span class="description">@cat.Category.Name</span>
                         </label>
                     </div>
-                }
+                    }
+                    <div id="category-error-message" class="d-none">
+                        <ul>
+                            <li>
+                                @Localizer["pickAtLeastOneCategory"]
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button id="step-1-next" type="button" class="btn next-step">@Localizer["nextButton"]</button>
                 </div>
             </div>
 
 
             <!-- STEP 2 -->
-            @*<div data-step="2">
-                <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
+            <div data-step="2">
+                <h3>@Localizer["provideNumberOfBags"]</h3>
 
                 <div class="form-group form-group--inline">
                     <label>
-                        Liczba 60l worków:
-                        <input type="number" name="bags" step="1" min="1" />
+                        @Localizer["numberOfBags"]
+                        <input asp-for="NumberOfBags" min="@Model.MinNumberOfBags"/>
                     </label>
                 </div>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" class="btn prev-step">@Localizer["backButton"]</button>
+                    <button type="button" class="btn next-step">@Localizer["nextButton"]</button>
                 </div>
-            </div>*@
+            </div>
 
 
             <!-- STEP 4 -->

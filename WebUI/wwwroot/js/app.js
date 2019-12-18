@@ -124,9 +124,23 @@ document.addEventListener("DOMContentLoaded", function() {
       // Next step
       this.$next.forEach(btn => {
         btn.addEventListener("click", e => {
-          e.preventDefault();
-          this.currentStep++;
-          this.updateForm();
+            e.preventDefault();
+            if (this.currentStep === 1) {
+                var okToMoveOn = validateCheckboxGroup('categories-checkbox-group', 'category-item');
+                if (okToMoveOn) {
+                    $('#category-error-message').addClass('d-none');
+                    this.currentStep++;
+                    this.updateForm();
+                }
+                else {
+                    //alert("form validity: " + okToMoveOn);
+                    $('#category-error-message').removeClass('d-none');
+                }
+            }
+            else {
+                this.currentStep++;
+                this.updateForm();
+            }            
         });
       });
 
@@ -172,3 +186,14 @@ document.addEventListener("DOMContentLoaded", function() {
     new FormSteps(form);
   }
 });
+
+function validateCheckboxGroup(groupId, itemClass) {
+    var checkboxes = $('#' + groupId).find('.' + itemClass);
+    var result = false;
+    for (i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked === true) {
+            result = true;
+        }
+    }
+    return result;
+}
