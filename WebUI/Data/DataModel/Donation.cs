@@ -13,8 +13,6 @@ namespace WebUI.Data.DataModel
 
         public int Quantity { get; set; }
 
-        public List<Category> Categories { get; set; }
-
         [Required]
         public Institution Institution { get; set; }
 
