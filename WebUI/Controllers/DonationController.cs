@@ -32,8 +32,9 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Donate(string x)
+        public IActionResult Donate()
         {
+            var x = HttpContext.Request;
             return Content("donate form- post");
         }
     }

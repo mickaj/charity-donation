@@ -22,9 +22,12 @@ namespace WebUI.Models
 
         public int MinNumberOfBags { get => 1; }
 
-        public DonationFormModel(MessageData messageData)
+        public CollectionData CollectionData { get; set; }
+
+        public DonationFormModel(MessageData messageData, CollectionData collectionData)
             :base(messageData)
         {
+            CollectionData = collectionData;
         }
 
         public void FillCategories(IEnumerable<Category> categories)
