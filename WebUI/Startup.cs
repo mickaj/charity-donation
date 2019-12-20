@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebUI.Data;
+using WebUI.Data.DataModel;
 using WebUI.Data.Services;
 using WebUI.Data.Services.Interfaces;
 using WebUI.Models;
@@ -34,7 +35,7 @@ namespace WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CharityDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<CharityUser, IdentityRole>()
                 .AddEntityFrameworkStores<CharityDbContext>();
 
             // Data access services

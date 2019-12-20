@@ -8,7 +8,7 @@ using WebUI.Data.DataModel;
 
 namespace WebUI.Data
 {
-    public class CharityDbContext : IdentityDbContext
+    public class CharityDbContext : IdentityDbContext<CharityUser>
     {
         public DbSet<Category> Categories { get; set; }
 

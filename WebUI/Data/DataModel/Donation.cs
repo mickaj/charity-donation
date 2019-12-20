@@ -36,5 +36,7 @@ namespace WebUI.Data.DataModel
         public string PickUpComment { get; set; }
 
         public List<CategoryDonation> CategoryDonations { get; set; }
+
+        public string CharityUserId { get; set; }
     }
 }
