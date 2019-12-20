@@ -126,6 +126,9 @@
   <data name="aboutUsMessage" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.</value>
   </data>
+  <data name="address" xml:space="preserve">
+    <value>Adres odbioru</value>
+  </data>
   <data name="appTitle" xml:space="preserve">
     <value>Oddam w dobre ręce</value>
   </data>
@@ -147,8 +150,17 @@
   <data name="chooseTrustedInstitution" xml:space="preserve">
     <value>wybierz zaufane miejsce</value>
   </data>
+  <data name="city" xml:space="preserve">
+    <value>Miasto</value>
+  </data>
+  <data name="collectionDate" xml:space="preserve">
+    <value>Termin odbioru</value>
+  </data>
   <data name="collectionDetailsForm" xml:space="preserve">
     <value>Podaj adres oraz termin odbioru rzeczy.</value>
+  </data>
+  <data name="collectionNotes" xml:space="preserve">
+    <value>Uwagi dla kuriera</value>
   </data>
   <data name="collectionOnDate" xml:space="preserve">
     <value>kurier przyjedzie w dogodnym terminie</value>
@@ -164,6 +176,9 @@
   </data>
   <data name="createAccountButton" xml:space="preserve">
     <value>Załóż konto</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Data</value>
   </data>
   <data name="decideWhoToHelp" xml:space="preserve">
     <value>Zdecyduj komu chcesz pomóc</value>
@@ -253,6 +268,9 @@
   <data name="peopleAlt" xml:space="preserve">
     <value>Ludzie w kręgu</value>
   </data>
+  <data name="phoneNumber" xml:space="preserve">
+    <value>Numer telefonu</value>
+  </data>
   <data name="pickAtLeastOneCategory" xml:space="preserve">
     <value>Musisz wybrać conajmniej jedną kategorię.</value>
   </data>
@@ -262,6 +280,9 @@
   <data name="pickOneInstitutionForm" xml:space="preserve">
     <value>Wybierz jedną, do
                 której trafi Twoja przesyłka.</value>
+  </data>
+  <data name="provideAddress" xml:space="preserve">
+    <value>Podaj adres oraz termin odbioru rzeczy przez kuriera:</value>
   </data>
   <data name="provideNumberOfBags" xml:space="preserve">
     <value>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</value>
@@ -302,11 +323,17 @@
   <data name="startLink" xml:space="preserve">
     <value>Start</value>
   </data>
+  <data name="street" xml:space="preserve">
+    <value>Ulica</value>
+  </data>
   <data name="thankYouLine" xml:space="preserve">
     <value>Dziękujemy!</value>
   </data>
   <data name="tickCategory" xml:space="preserve">
     <value>Zaznacz co chcesz oddać:</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Godzina</value>
   </data>
   <data name="useBags" xml:space="preserve">
     <value>skorzystaj z worków na śmieci</value>
@@ -322,5 +349,8 @@
   </data>
   <data name="yourMessageHasBeenSent" xml:space="preserve">
     <value>Twoja wiadomość została pomyślnie dostarczona do administratorów serwisu.</value>
+  </data>
+  <data name="zipCode" xml:space="preserve">
+    <value>Kod pocztowy</value>
   </data>
 </root>

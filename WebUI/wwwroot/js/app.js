@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     this.updateForm();
                 }
                 else {
-                    alert("form validity: " + okStepTwo);
+                    //alert("form validity: " + okStepTwo);
                     $('#institution-error-message').removeClass('d-none');
                 }
             }
