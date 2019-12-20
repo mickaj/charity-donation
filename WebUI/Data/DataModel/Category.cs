@@ -12,5 +12,7 @@ namespace WebUI.Data.DataModel
 
         [Required]
         public string Name { get; set; }
+
+        public List<CategoryDonation> CategoryDonations { get; set; }
     }
 }

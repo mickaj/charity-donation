@@ -22,5 +22,23 @@ namespace WebUI.Data
             : base (options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<CategoryDonation>()
+                .HasKey(t => new { t.CategoryId, t.DonationId });
+
+            builder.Entity<CategoryDonation>()
+                .HasOne(cd => cd.Category)
+                .WithMany(c => c.CategoryDonations)
+                .HasForeignKey(cd => cd.CategoryId);
+
+            builder.Entity<CategoryDonation>()
+                .HasOne(cd => cd.Donation)
+                .WithMany(d => d.CategoryDonations)
+                .HasForeignKey(cd => cd.DonationId);
+        }
     }
 }

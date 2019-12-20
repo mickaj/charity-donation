@@ -34,5 +34,7 @@ namespace WebUI.Data.DataModel
         public string PickUpTime { get => PickUpDate.ToString("HH:mm"); }
 
         public string PickUpComment { get; set; }
+
+        public List<CategoryDonation> CategoryDonations { get; set; }
     }
 }
