@@ -33,7 +33,8 @@
                                 <input type="checkbox" class="category-item"
                                        name="categories"
                                        value="@cat.Category.Id"
-                                       checked="@cat.IsChecked" />
+                                       checked="@cat.IsChecked" 
+                                       data-category-name="@cat.Category.Name"/>
                                 <span class="checkbox"></span>
                                 <span class="description">@cat.Category.Name</span>
                             </label>
@@ -86,7 +87,10 @@
                     {
                         <div class="form-group form-group--checkbox">
                             <label>
-                                <input class="institution-item" name="SelectedInstitutionId" type="radio" value="@institution.Id" />
+                                <input type="radio" class="institution-item"
+                                       name="SelectedInstitutionId"
+                                       value="@institution.Id"
+                                       data-category-name="@institution.Name"/>
                                 <span class="checkbox radio"></span>
                                 <span class="description">
                                     <div class="title">@institution.Name</div>
@@ -119,41 +123,48 @@
                     <div class="form-section--column">
                         <h4>@Localizer["address"]</h4>
                         <div class="form-group form-group--inline">
-                            <label> @Localizer["street"] <input type="text" name="address" /> </label>
+                            <label> @Localizer["street"] <input type="text" asp-for="CollectionData.Street" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> @Localizer["city"] <input type="text" name="city" /> </label>
+                            <label> @Localizer["city"] <input type="text" asp-for="CollectionData.City" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                @Localizer["zipCode"] <input type="text" name="postcode" />
+                                @Localizer["zipCode"] <input type="text" asp-for="CollectionData.ZipCode" />
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> @Localizer["phoneNumber"] <input type="text" name="phone" /></label>
+                            <label> @Localizer["phoneNumber"] <input type="text" asp-for="CollectionData.PhoneNumber" /></label>
                         </div>
                     </div>
 
                     <div class="form-section--column">
                         <h4>@Localizer["collectionDate"]</h4>
                         <div class="form-group form-group--inline">
-                            <label> @Localizer["date"] <input type="date" name="data" /> </label>
+                            <label> @Localizer["date"] <input type="date" asp-for="CollectionData.Date" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> @Localizer["time"] <input type="time" name="time" /> </label>
+                            <label> @Localizer["time"] <input type="time" asp-for="CollectionData.Time" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 @Localizer["collectionNotes"]
-                                <textarea name="more_info" rows="5"></textarea>
+                                <textarea asp-for="CollectionData.Notes" rows="5"></textarea>
                             </label>
                         </div>
                     </div>
+                </div>
+                <div id="collection-error-message" class="d-none">
+                    <ul>
+                        <li>
+                            @Localizer["provideAddressDetails"]
+                        </li>
+                    </ul>
                 </div>
 
                 <partial name="_FormButtonsPartial">
@@ -162,52 +173,54 @@
 
 
             <!-- STEP 5 -->
-            @*<div data-step="5">
-                    <h3>Podsumowanie Twojej darowizny</h3>
+            <div data-step="5">
+                    <h3>@Localizer["donationSummary"]</h3>
 
                     <div class="summary">
                         <div class="form-section">
-                            <h4>Oddajesz:</h4>
+                            <h4>@Localizer["youAreGivingAway"]</h4>
                             <ul>
                                 <li>
                                     <span class="icon icon-bag"></span>
-                                    <span class="summary--text">4 worki ubrań w dobrym stanie dla dzieci</span>
+                                    <span id="summary-items" class="summary--text"><!--ubrania w dobrym stanie dla dzieci (worków: 9)--></span>
+                                    <span id="summary-items-string" class="d-none">@Localizer["summaryItems"]</span>
                                 </li>
 
                                 <li>
                                     <span class="icon icon-hand"></span>
-                                    <span class="summary--text">Dla fundacji "Mam marzenie" w Warszawie</span>
+                                    <span id="summary-institution" class="summary--text"><!--dla: Fundacja "Mam marzenie"--></span>
+                                    <span id="summary-institution-string" class="d-none">@Localizer["summaryInstitution"]</span>
                                 </li>
                             </ul>
                         </div>
 
                         <div class="form-section form-section--columns">
                             <div class="form-section--column">
-                                <h4>Adres odbioru:</h4>
+                                <h4>@Localizer["addressColon"]</h4>
                                 <ul>
-                                    <li>Prosta 51</li>
-                                    <li>Warszawa</li>
-                                    <li>99-098</li>
-                                    <li>123 456 789</li>
+                                    <li id="summary-street"><!--ulica--></li>
+                                    <li id="summary-city"><!--miasto--></li>
+                                    <li id="summary-zip"><!--kod--></li>
+                                    <li id="summary-phone"><!--telefon--></li>
                                 </ul>
                             </div>
 
                             <div class="form-section--column">
-                                <h4>Termin odbioru:</h4>
+                                <h4>@Localizer["collectionDateColon"]</h4>
                                 <ul>
-                                    <li>13/12/2018</li>
-                                    <li>15:40</li>
-                                    <li>Brak uwag</li>
+                                    <li id="summary-date"><!--data--></li>
+                                    <li id="summary-time"><!--godzina--></li>
+                                    <li id="summary-notes">@Localizer["summaryNoNotes"]</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group form-group--buttons">
-                        <button type="button" class="btn prev-step">Wstecz</button>
-                        <button type="submit" class="btn">Potwierdzam</button>
+                        <button type="button" class="btn prev-step">@Localizer["backButton"]</button>
+                        <button type="submit" class="btn">@Localizer["confirmButton"]</button>
                     </div>
-                </div>*@
+                </div>
 
 
         </form>

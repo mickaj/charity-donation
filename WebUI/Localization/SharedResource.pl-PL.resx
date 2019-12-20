@@ -129,6 +129,9 @@
   <data name="address" xml:space="preserve">
     <value>Adres odbioru</value>
   </data>
+  <data name="addressColon" xml:space="preserve">
+    <value>Adres odbioru:</value>
+  </data>
   <data name="appTitle" xml:space="preserve">
     <value>Oddam w dobre ręce</value>
   </data>
@@ -156,6 +159,9 @@
   <data name="collectionDate" xml:space="preserve">
     <value>Termin odbioru</value>
   </data>
+  <data name="collectionDateColon" xml:space="preserve">
+    <value>Termin odbioru:</value>
+  </data>
   <data name="collectionDetailsForm" xml:space="preserve">
     <value>Podaj adres oraz termin odbioru rzeczy.</value>
   </data>
@@ -164,6 +170,9 @@
   </data>
   <data name="collectionOnDate" xml:space="preserve">
     <value>kurier przyjedzie w dogodnym terminie</value>
+  </data>
+  <data name="confirmButton" xml:space="preserve">
+    <value>Potwierdzam</value>
   </data>
   <data name="contactForm" xml:space="preserve">
     <value>Formularz kontaktowy</value>
@@ -185,6 +194,9 @@
   </data>
   <data name="donateLink" xml:space="preserve">
     <value>Przekaż dary</value>
+  </data>
+  <data name="donationSummary" xml:space="preserve">
+    <value>Podsumowanie Twojej darowizny</value>
   </data>
   <data name="emailLabel" xml:space="preserve">
     <value>Email</value>
@@ -284,6 +296,9 @@
   <data name="provideAddress" xml:space="preserve">
     <value>Podaj adres oraz termin odbioru rzeczy przez kuriera:</value>
   </data>
+  <data name="provideAddressDetails" xml:space="preserve">
+    <value>Podaj wszystkie informacje niezbędne dla kuriera</value>
+  </data>
   <data name="provideNumberOfBags" xml:space="preserve">
     <value>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</value>
   </data>
@@ -326,6 +341,15 @@
   <data name="street" xml:space="preserve">
     <value>Ulica</value>
   </data>
+  <data name="summaryInstitution" xml:space="preserve">
+    <value>dla: %INSTITUTION%</value>
+  </data>
+  <data name="summaryItems" xml:space="preserve">
+    <value>%CATEGORY% (worków: %COUNT%)</value>
+  </data>
+  <data name="summaryNoNotes" xml:space="preserve">
+    <value>brak uwag</value>
+  </data>
   <data name="thankYouLine" xml:space="preserve">
     <value>Dziękujemy!</value>
   </data>
@@ -346,6 +370,9 @@
   </data>
   <data name="whoWeHelpBody" xml:space="preserve">
     <value>W naszej bazie znajdziesz listę zweryfikowanych fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują.</value>
+  </data>
+  <data name="youAreGivingAway" xml:space="preserve">
+    <value>Oddajesz:</value>
   </data>
   <data name="yourMessageHasBeenSent" xml:space="preserve">
     <value>Twoja wiadomość została pomyślnie dostarczona do administratorów serwisu.</value>

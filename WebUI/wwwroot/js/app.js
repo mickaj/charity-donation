@@ -149,8 +149,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
             else if (this.currentStep === 3) {
-                var okStepTwo = validateCheckboxGroup('institution-checkbox-group', 'institution-item');
-                if (okStepTwo) {
+                var okStepThree = validateCheckboxGroup('institution-checkbox-group', 'institution-item');
+                if (okStepThree) {
                     $('#institution-error-message').addClass('d-none');
                     this.currentStep++;
                     this.updateForm();
@@ -158,6 +158,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 else {
                     //alert("form validity: " + okStepTwo);
                     $('#institution-error-message').removeClass('d-none');
+                }
+            }
+            else if (this.currentStep === 4) {
+                var okStepFour = validateRequired(["CollectionData_Street", "CollectionData_City", "CollectionData_ZipCode", "CollectionData_PhoneNumber", "CollectionData_Date", "CollectionData_Time"]);
+                if (okStepFour) {
+                    $('#collection-error-message').addClass('d-none');
+                    this.currentStep++;
+                    this.updateForm();
+                    fillSummary();
+                }
+                else {
+                    //alert("form validity: " + okStepTwo);
+                    $('#collection-error-message').removeClass('d-none');
                 }
             }
             else {
@@ -216,6 +229,58 @@ function validateCheckboxGroup(groupId, itemClass) {
     for (i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked === true) {
             result = true;
+        }
+    }
+    return result;
+}
+
+function validateRequired(inputIds) {
+    var result = false;
+    for (i = 0; i < inputIds.length; i++) {
+        result = $("#" + inputIds[i]).val().length > 0;
+    }
+    return result;
+}
+
+function fillSummary() {
+    var bagsCount = $("#NumberOfBags").val();
+    var category = findPickedCategories("categories-checkbox-group", "category-item");
+    var institution = findPickedCategories("institution-checkbox-group", "institution-item");
+
+    var itemString = $("#summary-items-string").html().replace("%CATEGORY%", category).replace("%COUNT%", bagsCount);
+
+    var institutionString = $("#summary-institution-string").html().replace("%INSTITUTION%", institution);
+
+    $("#summary-items").html(itemString);
+    $("#summary-institution").html(institutionString);
+
+    $("#summary-street").html($("#CollectionData_Street").val());
+    $("#summary-city").html($("#CollectionData_City").val());
+    $("#summary-zip").html($("#CollectionData_ZipCode").val());
+    $("#summary-phone").html($("#CollectionData_PhoneNumber").val());
+
+    var date = new Date($("#CollectionData_Date").val() + "T" + $("#CollectionData_Time").val());
+    var dateString = date.getDay() + "/" +date.getMonth()+"/"+date.getFullYear();
+    var timeString = date.getHours()+":"+date.getMinutes();
+
+    $("#summary-date").html(dateString);
+    $("#summary-time").html(timeString);
+
+    var notes = $("#CollectionData_Notes").val();
+    if (notes.length > 0) {
+        $("#summary-notes").html();
+    }    
+}
+
+function findPickedCategories(groupId, itemClass) {
+    var checkboxes = $('#' + groupId).find('.' + itemClass);
+    var result = "";
+    for (i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked === true) {
+            if (result.length > 0) {
+                result += ", ";
+            }
+            result += checkboxes[i].dataset.categoryName;
         }
     }
     return result;
