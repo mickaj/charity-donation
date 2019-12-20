@@ -13,16 +13,19 @@ namespace WebUI.Controllers
     public class DonationController : Controller
     {
         private readonly IDonationsService _donationsService;
+        private readonly IInstitutionsService _institutionsService;
 
-        public DonationController(IDonationsService donationsService)
+        public DonationController(IDonationsService donationsService, IInstitutionsService institutionsService)
         {
             _donationsService = donationsService;
+            _institutionsService = institutionsService;
         }
 
         [HttpGet]
         public IActionResult Donate([FromServices]DonationFormModel vm)
         {
-            vm.FillCategories(_donationsService.GetCategories());            
+            vm.FillCategories(_donationsService.GetCategories());
+            vm.FillInstitutions(_institutionsService.GetInstitutions());
 
             ViewBag.ShowFormSlogan = true;
             return View(vm);

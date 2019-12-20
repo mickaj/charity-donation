@@ -12,6 +12,11 @@ namespace WebUI.Models
         private readonly List<Category> _categories = new List<Category>();
         public IReadOnlyList<CategoryViewModel> AvailableCategories { get => GetAvailableCategories(); }
 
+        private readonly List<Institution> _institutions = new List<Institution>();
+        public IReadOnlyList<Institution> AvaiilableInstitutions { get => _institutions.AsReadOnly(); }
+
+        public int SelectedInstitutionId { get; set; }
+
         [Range(1, int.MaxValue)]
         public int NumberOfBags { get; set; } = 1;
 
@@ -25,6 +30,11 @@ namespace WebUI.Models
         public void FillCategories(IEnumerable<Category> categories)
         {
             _categories.AddRange(categories);
+        }
+
+        public void FillInstitutions(IEnumerable<Institution> institutions)
+        {
+            _institutions.AddRange(institutions);
         }
 
         private IReadOnlyList<CategoryViewModel> GetAvailableCategories()

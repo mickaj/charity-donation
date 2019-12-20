@@ -126,8 +126,8 @@ document.addEventListener("DOMContentLoaded", function() {
         btn.addEventListener("click", e => {
             e.preventDefault();
             if (this.currentStep === 1) {
-                var okToMoveOn = validateCheckboxGroup('categories-checkbox-group', 'category-item');
-                if (okToMoveOn) {
+                var okStepOne = validateCheckboxGroup('categories-checkbox-group', 'category-item');
+                if (okStepOne) {
                     $('#category-error-message').addClass('d-none');
                     this.currentStep++;
                     this.updateForm();
@@ -146,6 +146,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 else {
                     $('#bags-error-message').removeClass('d-none');
+                }
+            }
+            else if (this.currentStep === 3) {
+                var okStepTwo = validateCheckboxGroup('institution-checkbox-group', 'institution-item');
+                if (okStepTwo) {
+                    $('#institution-error-message').addClass('d-none');
+                    this.currentStep++;
+                    this.updateForm();
+                }
+                else {
+                    alert("form validity: " + okStepTwo);
+                    $('#institution-error-message').removeClass('d-none');
                 }
             }
             else {

@@ -141,6 +141,9 @@
   <data name="chooseInstitution" xml:space="preserve">
     <value>Wybierz fundację</value>
   </data>
+  <data name="chooseInstitutionYouWantToHelp" xml:space="preserve">
+    <value>Wybierz organizację, której chcesz pomóc:</value>
+  </data>
   <data name="chooseTrustedInstitution" xml:space="preserve">
     <value>wybierz zaufane miejsce</value>
   </data>
@@ -252,6 +255,9 @@
   </data>
   <data name="pickAtLeastOneCategory" xml:space="preserve">
     <value>Musisz wybrać conajmniej jedną kategorię.</value>
+  </data>
+  <data name="pickOneInstitution" xml:space="preserve">
+    <value>Musisz wybrać jedną organizację.</value>
   </data>
   <data name="pickOneInstitutionForm" xml:space="preserve">
     <value>Wybierz jedną, do
