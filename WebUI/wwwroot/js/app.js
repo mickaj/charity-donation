@@ -261,12 +261,12 @@ function fillSummary() {
     $("#summary-zip").html($("#CollectionData_ZipCode").val());
     $("#summary-phone").html($("#CollectionData_PhoneNumber").val());
 
-    var date = new Date($("#CollectionData_Date").val() + "T" + $("#CollectionData_Time").val());
-    var dateString = date.getDay() + "/" +date.getMonth()+"/"+date.getFullYear();
-    var timeString = date.getHours()+":"+date.getMinutes();
+    //var date = new Date($("#CollectionData_Date").val() + "T" + $("#CollectionData_Time").val());
+    //var dateString = date.getDay() + "/" +date.getMonth()+"/"+date.getFullYear();
+    //var timeString = date.getHours()+":"+date.getMinutes();
 
-    $("#summary-date").html(dateString);
-    $("#summary-time").html(timeString);
+    $("#summary-date").html($("#CollectionData_Date").val());
+    $("#summary-time").html($("#CollectionData_Time").val());
 
     var notes = $("#CollectionData_Notes").val();
     if (notes.length > 0) {
