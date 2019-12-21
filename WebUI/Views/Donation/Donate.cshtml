@@ -143,11 +143,11 @@
                     <div class="form-section--column">
                         <h4>@Localizer["collectionDate"]</h4>
                         <div class="form-group form-group--inline">
-                            <label> @Localizer["date"] <input type="date" asp-for="CollectionData.Date" /> </label>
+                            <label> @Localizer["date"] <input type="date" asp-for="CollectionData.Date" value="@DateTime.Now.AddDays(3).ToString("yyyy-MM-dd")"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> @Localizer["time"] <input type="time" asp-for="CollectionData.Time" /> </label>
+                            <label> @Localizer["time"] <input type="time" asp-for="CollectionData.Time" value="12:00"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
