@@ -38,3 +38,12 @@
         </div>
     </div>
 }
+
+@if (ViewBag.ShowConfirmationSlogan == true)
+{
+    <div class="slogan container container--90">
+        <h2>
+            @Localizer["confirmationSlogan"]
+        </h2>
+    </div>
+}

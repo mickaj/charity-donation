@@ -171,6 +171,9 @@
   <data name="collectionOnDate" xml:space="preserve">
     <value>kurier przyjedzie w dogodnym terminie</value>
   </data>
+  <data name="confirmationSlogan" xml:space="preserve">
+    <value>Dziękujemy za przesłanie formularza. Na maila prześlemy wszelkie informacje o odbiorze.</value>
+  </data>
   <data name="confirmButton" xml:space="preserve">
     <value>Potwierdzam</value>
   </data>

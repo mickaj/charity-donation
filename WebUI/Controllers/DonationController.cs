@@ -43,7 +43,9 @@ namespace WebUI.Controllers
             var catsInts = StringArrayToIntArray(cats);
             var date = DateTime.Parse(vm.CollectionData.Date + "T" + vm.CollectionData.Time);
             _donationsService.AddDonation(userId, vm.SelectedInstitutionId, vm.CollectionData.Street, vm.CollectionData.City, vm.CollectionData.ZipCode, date, vm.CollectionData.Notes, vm.NumberOfBags, catsInts);
-            return Content("donate form- post");
+
+            ViewBag.ShowConfirmationSlogan = true;
+            return View();
         }
 
         private int[] StringArrayToIntArray(IEnumerable<string> strings)
