@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WebUI.Data.DataModel;
 using WebUI.Data.Services.Interfaces;
 using WebUI.Models;
 
@@ -14,11 +16,13 @@ namespace WebUI.Controllers
     {
         private readonly IDonationsService _donationsService;
         private readonly IInstitutionsService _institutionsService;
+        private readonly UserManager<CharityUser> _userManager;
 
-        public DonationController(IDonationsService donationsService, IInstitutionsService institutionsService)
+        public DonationController(IDonationsService donationsService, IInstitutionsService institutionsService, UserManager<CharityUser> userManager)
         {
             _donationsService = donationsService;
             _institutionsService = institutionsService;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -32,10 +36,24 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Donate()
+        public IActionResult DonateExecute([FromForm]DonationFormModel vm)
         {
-            var x = HttpContext.Request;
+            var userId = _userManager.GetUserId(User);
+            var cats = HttpContext.Request.Form["CategoriesString"];
+            var catsInts = StringArrayToIntArray(cats);
+            var date = DateTime.Parse(vm.CollectionData.Date + "T" + vm.CollectionData.Time);
+            _donationsService.AddDonation(userId, vm.SelectedInstitutionId, vm.CollectionData.Street, vm.CollectionData.City, vm.CollectionData.ZipCode, date, vm.CollectionData.Notes, vm.NumberOfBags, catsInts);
             return Content("donate form- post");
+        }
+
+        private int[] StringArrayToIntArray(IEnumerable<string> strings)
+        {
+            var result = new List<int>();
+            foreach(var s in strings)
+            {
+                if(int.TryParse(s, out int i)) { result.Add(i); }
+            }
+            return result.ToArray();
         }
     }
 }

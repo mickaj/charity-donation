@@ -20,23 +20,22 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-        <form id="donation-form" asp-controller="Donation" asp-action="Donate" method="post">
+        <form id="donation-form" asp-controller="Donation" asp-action="DonateExecute" method="post">
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>@Localizer["tickCategory"]</h3>
 
                 <div id="categories-checkbox-group">
-                    @foreach (var cat in Model.AvailableCategories)
+                    @foreach(var cat in Model.AvailableCategories)
                     {
                         <div class="form-group form-group--checkbox">
                             <label>
                                 <input type="checkbox" class="category-item"
-                                       name="categories"
-                                       value="@cat.Category.Id"
-                                       checked="@cat.IsChecked" 
-                                       data-category-name="@cat.Category.Name"/>
+                                       name="CategoriesString"
+                                       value="@cat.CategoryId"
+                                       data-category-name="@cat.CategoryName"/>
                                 <span class="checkbox"></span>
-                                <span class="description">@cat.Category.Name</span>
+                                <span class="description">@cat.CategoryName</span>
                             </label>
                         </div>
                     }

@@ -9,8 +9,9 @@ namespace WebUI.Models
 {
     public class DonationFormModel : ViewModelBase
     {
-        private readonly List<Category> _categories = new List<Category>();
-        public IReadOnlyList<CategoryViewModel> AvailableCategories { get => GetAvailableCategories(); }
+        public List<CategoryViewModel> AvailableCategories { get; set; } = new List<CategoryViewModel>();
+
+        public string CategoriesString { get; set; }
 
         private readonly List<Institution> _institutions = new List<Institution>();
         public IReadOnlyList<Institution> AvaiilableInstitutions { get => _institutions.AsReadOnly(); }
@@ -24,6 +25,12 @@ namespace WebUI.Models
 
         public CollectionData CollectionData { get; set; }
 
+        public DonationFormModel()
+            :base(new MessageData())
+        {
+            CollectionData = new CollectionData();
+        }
+        
         public DonationFormModel(MessageData messageData, CollectionData collectionData)
             :base(messageData)
         {
@@ -32,22 +39,15 @@ namespace WebUI.Models
 
         public void FillCategories(IEnumerable<Category> categories)
         {
-            _categories.AddRange(categories);
+            foreach (var cat in categories)
+            {
+                AvailableCategories.Add(new CategoryViewModel(cat));
+            }
         }
 
         public void FillInstitutions(IEnumerable<Institution> institutions)
         {
             _institutions.AddRange(institutions);
-        }
-
-        private IReadOnlyList<CategoryViewModel> GetAvailableCategories()
-        {
-            var result = new List<CategoryViewModel>();
-            foreach (var cat in _categories)
-            {
-                result.Add(new CategoryViewModel(cat));
-            }
-            return result;
         }
     }
 }
