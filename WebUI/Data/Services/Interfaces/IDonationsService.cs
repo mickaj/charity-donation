@@ -13,5 +13,7 @@ namespace WebUI.Data.Services.Interfaces
         int GetNumberOfDonatedBags();
 
         IReadOnlyList<Category> GetCategories();
+
+        void AddDonation(string userId, int institutionId, string street, string city, string zipCode, DateTime pickUpDate, string notes, int bagsQty, IEnumerable<int> categoryIds);
     }
 }

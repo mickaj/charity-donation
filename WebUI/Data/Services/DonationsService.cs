@@ -28,5 +28,33 @@ namespace WebUI.Data.Services
         {
             return _context.Categories.ToList().AsReadOnly();
         }
+
+        public void AddDonation(string userId, int institutionId, string street, string city, string zipCode, DateTime pickUpDate, string notes, int bagsQty, IEnumerable<int> categoryIds)
+        {
+            var institution = _context.Institutions.Single(i => i.Id == institutionId);
+            var categories = _context.Categories.Where(c => categoryIds.Contains(c.Id));
+
+            var donation = new Donation
+            {
+                CharityUserId = userId,
+                Institution = institution,
+                Quantity = bagsQty,
+                Street = street,
+                City = city,
+                ZipCode = zipCode,
+                PickUpDate = pickUpDate,
+                PickUpComment = string.IsNullOrWhiteSpace(notes) ? string.Empty : notes
+            };
+
+            var cds = new List<CategoryDonation>();
+            foreach(var cat in categories)
+            {
+                cds.Add(new CategoryDonation { Donation = donation, Category = cat });
+            }
+            donation.CategoryDonations = cds;
+
+            _context.Donations.Add(donation);
+            _context.SaveChanges();
+        }
     }
 }
