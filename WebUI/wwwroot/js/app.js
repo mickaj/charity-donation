@@ -235,9 +235,11 @@ function validateCheckboxGroup(groupId, itemClass) {
 }
 
 function validateRequired(inputIds) {
-    var result = false;
+    var result = true;
     for (i = 0; i < inputIds.length; i++) {
-        result = $("#" + inputIds[i]).val().length > 0;
+        if ($("#" + inputIds[i]).val().length < 1) {
+            return false;
+        }
     }
     return result;
 }
