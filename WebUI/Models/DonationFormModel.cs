@@ -23,6 +23,8 @@ namespace WebUI.Models
 
         public int MinNumberOfBags { get => 1; }
 
+        public int MaxNumberOfBags { get => 100; }
+
         public CollectionData CollectionData { get; set; }
 
         public DonationFormModel()

@@ -61,7 +61,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         @Localizer["numberOfBags"]
-                        <input asp-for="NumberOfBags" min="@Model.MinNumberOfBags" />
+                        <input asp-for="NumberOfBags" min="@Model.MinNumberOfBags" max="@Model.MaxNumberOfBags"/>
                     </label>
                 </div>
 

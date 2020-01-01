@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             else if (this.currentStep === 2) {
                 var numberOfBags = $('#NumberOfBags').val();
-                if (numberOfBags > 0) {
+                if (numberOfBags > 0 && numberOfBags <= 100) {
                     $('#bags-error-message').addClass('d-none');
                     this.currentStep++;
                     this.updateForm();
