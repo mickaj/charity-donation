@@ -1442,7 +1442,7 @@ header nav ul li:last-of-type {
 
 /* line 54, scss/modules/homepage-sections/_help.scss */
 .help--slides-items .col {
-  width: 100%;
+  width: 50%;
 }
 
 /* line 57, scss/modules/homepage-sections/_help.scss */
@@ -1451,7 +1451,7 @@ header nav ul li:last-of-type {
 }
 
 /* line 61, scss/modules/homepage-sections/_help.scss */
-.help--slides-items .col:after {
+div.line {
   content: "";
   width: 70%;
   height: 1px;
@@ -1459,6 +1459,10 @@ header nav ul li:last-of-type {
   position: relative;
   margin-top: 25px;
   background-color: #bcbcbc;
+}
+
+div.right {
+    float: right;
 }
 
 /* line 72, scss/modules/homepage-sections/_help.scss */

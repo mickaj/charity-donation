@@ -12,19 +12,27 @@
         <ul class="help--slides-items">
             @foreach (var pair in Model.Institutions)
             {
-                string name1 = pair.Item1 != null ? pair.Item1.Name : "\u00a0";
-                string desc1 = pair.Item1 != null ? pair.Item1.Description : "\u00a0";
-                string name2 = pair.Item2 != null ? pair.Item2.Name : "\u00a0";
-                string desc2 = pair.Item2 != null ? pair.Item2.Description : "\u00a0";
+                string name1 = pair.Item1 != null ? pair.Item1.Name : " ";
+                string desc1 = pair.Item1 != null ? pair.Item1.Description : " ";
+                string name2 = pair.Item2 != null ? pair.Item2.Name : " ";
+                string desc2 = pair.Item2 != null ? pair.Item2.Description : " ";
 
                 <li>
                     <div class="col">
-                        <div class="title">@name1</div>
-                        <div class="subtitle">@desc1</div>
+                        @if (!(string.IsNullOrWhiteSpace(name1) && string.IsNullOrWhiteSpace(desc1)))
+                        {
+                            <div class="title">@name1</div>
+                            <div class="subtitle">@desc1</div>
+                            <div class="line"></div>
+                        }
                     </div>
                     <div class="col">
-                        <div class="title">@name2</div>
-                        <div class="subtitle">@desc2</div>
+                        @if (!(string.IsNullOrWhiteSpace(name2) && string.IsNullOrWhiteSpace(desc2)))
+                        {
+                            <div class="title">@name2</div>
+                            <div class="subtitle">@desc2</div>
+                            <div class="line right"></div>
+                        }
                     </div>
                 </li>
             }
