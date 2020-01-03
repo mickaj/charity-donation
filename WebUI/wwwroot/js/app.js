@@ -158,28 +158,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         validateStepOne() {
+            var errorMessageElement = document.getElementById('category-error-message');
             var okStepOne = validateCheckboxGroup('categories-checkbox-group', 'category-item');
             if (okStepOne) {
-                document.getElementById('category-error-message').classList.add('d-none');
+                errorMessageElement.style.display = "none";
                 this.currentStep++;
                 this.updateForm();
             }
             else {
-                //alert("form validity: " + okToMoveOn);
-                document.getElementById('category-error-message').classList.remove('d-none');
+                errorMessageElement.style.display = "block";
             }
         }
 
         validateStepTwo() {
             var errorMessageElement = document.getElementById('bags-error-message');
-            var numberOfBags = document.getElementById('NumberOfBags').value;
-            if (numberOfBags > 0 && numberOfBags <= 100) {
-                errorMessageElement.classList.add('d-none');
+            var numberOfBagsElement = document.getElementById('NumberOfBags');
+            var actual = numberOfBagsElement.value;
+            var max = numberOfBagsElement.getAttribute('max');
+            var min = numberOfBagsElement.getAttribute('min');
+            if (actual >= min && actual <= max) {
+                errorMessageElement.style.display = "none";
                 this.currentStep++;
                 this.updateForm();
             }
             else {
-                errorMessageElement.classList.remove('d-none');
+                errorMessageElement.style.display = "block";
             }
         }
 
@@ -187,13 +190,12 @@ document.addEventListener("DOMContentLoaded", function () {
             var errorMessageElement = document.getElementById('institution-error-message');
             var okStepThree = validateCheckboxGroup('institution-checkbox-group', 'institution-item');
             if (okStepThree) {
-                errorMessageElement.classList.add('d-none');
+                errorMessageElement.style.display = "none";
                 this.currentStep++;
                 this.updateForm();
             }
             else {
-                //alert("form validity: " + okStepTwo);
-                errorMessageElement.classList.remove('d-none');
+                errorMessageElement.style.display = "block";
             }
         }
 
@@ -201,14 +203,13 @@ document.addEventListener("DOMContentLoaded", function () {
             var errorMessageElement = document.getElementById('collection-error-message');
             var okStepFour = validateRequired(["CollectionData_Street", "CollectionData_City", "CollectionData_ZipCode", "CollectionData_PhoneNumber", "CollectionData_Date", "CollectionData_Time"]);
             if (okStepFour) {
-                errorMessageElement.classList.add('d-none');
+                errorMessageElement.style.display = "none";
                 this.currentStep++;
                 this.updateForm();
                 this.fillSummary();
             }
             else {
-                //alert("form validity: " + okStepTwo);
-                errorMessageElement.classList.remove('d-none');
+                errorMessageElement.style.display = "block";
             }
         }
 
@@ -219,9 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
        */
         updateForm() {
             this.$step.innerText = this.currentStep;
-
-            // TODO: Validation
-
 
             this.slides.forEach(slide => {
                 slide.classList.remove("active");
