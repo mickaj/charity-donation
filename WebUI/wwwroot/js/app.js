@@ -173,9 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
         validateStepTwo() {
             var errorMessageElement = document.getElementById('bags-error-message');
             var numberOfBagsElement = document.getElementById('NumberOfBags');
-            var actual = numberOfBagsElement.value;
-            var max = numberOfBagsElement.getAttribute('max');
-            var min = numberOfBagsElement.getAttribute('min');
+            var actual = parseInt(numberOfBagsElement.value);
+            var max = parseInt(numberOfBagsElement.getAttribute('max'));
+            var min = parseInt(numberOfBagsElement.getAttribute('min'));
             if (actual >= min && actual <= max) {
                 errorMessageElement.style.display = "none";
                 this.currentStep++;
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var category = findPickedCategories("categories-checkbox-group", "category-item");
             var institution = findPickedCategories("institution-checkbox-group", "institution-item");
 
-            var itemString = document.getElementById('summary-items-string').innerHTML.replace("%CATEGORY%", category).replace("% COUNT% ", bagsCount);
+            var itemString = document.getElementById('summary-items-string').innerHTML.replace("%CATEGORY%", category).replace("%COUNT% ", bagsCount);
             var institutionString = document.getElementById('summary-institution-string').innerHTML.replace("%INSTITUTION%", institution);
 
             document.getElementById('summary-items').innerHTML = itemString;
