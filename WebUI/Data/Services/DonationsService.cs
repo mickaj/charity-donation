@@ -31,8 +31,15 @@ namespace WebUI.Data.Services
 
         public void AddDonation(string userId, int institutionId, string street, string city, string zipCode, DateTime pickUpDate, string notes, int bagsQty, IEnumerable<int> categoryIds)
         {
-            var institution = _context.Institutions.Single(i => i.Id == institutionId);
-            var categories = _context.Categories.Where(c => categoryIds.Contains(c.Id));
+            // var institution = _context.Institutions.Single(i => i.Id == institutionId);
+            var institution = new Institution() { Id = institutionId };
+            _context.Attach(institution);
+            // var categories = _context.Categories.Where(c => categoryIds.Contains(c.Id));
+            var categories = new List<Category>();
+            foreach(int catId in categoryIds)
+            {
+                categories.Add(new Category() { Id = catId });
+            }
 
             var donation = new Donation
             {
@@ -49,6 +56,7 @@ namespace WebUI.Data.Services
             var cds = new List<CategoryDonation>();
             foreach(var cat in categories)
             {
+                _context.Attach(cat);
                 cds.Add(new CategoryDonation { Donation = donation, Category = cat });
             }
             donation.CategoryDonations = cds;
