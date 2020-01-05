@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.slides.forEach(slide => {
                 slide.classList.remove("active");
 
-                if (slide.dataset.step == this.currentStep) {
+                if (parseInt(slide.dataset.step) === this.currentStep) {
                     slide.classList.add("active");
                 }
             });
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var category = findPickedCategories("categories-checkbox-group", "category-item");
             var institution = findPickedCategories("institution-checkbox-group", "institution-item");
 
-            var itemString = document.getElementById('summary-items-string').innerHTML.replace("%CATEGORY%", category).replace("%COUNT% ", bagsCount);
+            var itemString = document.getElementById('summary-items-string').innerHTML.replace("%CATEGORY%", category).replace("%COUNT%", bagsCount);
             var institutionString = document.getElementById('summary-institution-string').innerHTML.replace("%INSTITUTION%", institution);
 
             document.getElementById('summary-items').innerHTML = itemString;
