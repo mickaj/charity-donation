@@ -1,4 +1,11 @@
 ﻿<ul id="navi" class="nav--actions">
+    <li>
+        <a asp-controller="Home" asp-action="SwitchLanguage" asp-route-culture="pl-PL" class="btn btn--small">PL</a>
+    </li>
+    <li>
+        <a asp-controller="Home" asp-action="SwitchLanguage" asp-route-culture="en-GB" class="btn btn--small">EN</a>
+    </li>
+
     @if (!User.Identity.IsAuthenticated)
     {
         <li><a asp-controller="Account" asp-action="Login" class="btn btn--small btn--without-border">@Localizer["loginButton"]</a></li>
