@@ -50,32 +50,29 @@ namespace WebUI
             services.AddTransient<MessageData>();
             services.AddTransient<CollectionData>();
             services.AddTransient<DonationFormModel>();
-            
+
             services.AddControllersWithViews();
 
             services.AddLocalization(options => options.ResourcesPath = "");
             services.AddControllersWithViews()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization();
-
-            services.Configure<RequestLocalizationOptions>(options =>
-            {
-                var supportedCultures = new List<CultureInfo>
-                    {
-                        new CultureInfo("pl-PL"),
-                    };
-                options.DefaultRequestCulture = new RequestCulture("pl-PL");
-                options.SupportedCultures = supportedCultures;
-                options.SupportedUICultures = supportedCultures;
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var cultureInfo = new CultureInfo(Configuration["Settings:Culture"]);
-            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
-            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+            var supportedCultures = GetSupportedCultures();
+            //CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            //CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(supportedCultures[0]),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures,
+                RequestCultureProviders = new List<IRequestCultureProvider> { new CookieRequestCultureProvider() }
+            }) ;
 
             if (env.IsDevelopment())
             {
@@ -101,6 +98,17 @@ namespace WebUI
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private IList<CultureInfo> GetSupportedCultures()
+        {
+            var result = new List<CultureInfo>();
+            var cultureStrings = Configuration.GetSection("Settings:SupportedCultures").Get<List<string>>();
+            foreach(var c in cultureStrings)
+            {
+                result.Add(new CultureInfo(c));
+            }
+            return result;
         }
     }
 }
