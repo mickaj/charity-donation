@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var notes = document.getElementById('CollectionData_Notes').value;
             if (notes.length > 0) {
-                document.getElementById('summary-notes').innerHTML(notes);
+                document.getElementById('summary-notes').innerHTML = notes;
             }
         }
     }
