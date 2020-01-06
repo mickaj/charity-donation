@@ -195,6 +195,12 @@
   <data name="decideWhoToHelp" xml:space="preserve">
     <value>Decide who to help</value>
   </data>
+  <data name="demoWarning" xml:space="preserve">
+    <value>This is just a demonstration!</value>
+  </data>
+  <data name="demoWarningMessage" xml:space="preserve">
+    <value>This application is merly for demonstration purposes. Any action take by a user in this app DOES NOT lead to any actions taken by site admins or whoever else. This application is for testing and demonstration only.</value>
+  </data>
   <data name="donateLink" xml:space="preserve">
     <value>Donate</value>
   </data>
@@ -293,6 +299,12 @@
   </data>
   <data name="pickOneInstitutionForm" xml:space="preserve">
     <value>Choose one institution that your donation will be delivered to</value>
+  </data>
+  <data name="privacyWarning" xml:space="preserve">
+    <value>Privacy and cookies policy</value>
+  </data>
+  <data name="privacyWarningMessage" xml:space="preserve">
+    <value>This application uses cookie files. If you do not agree to that, please leave this websit and delete any cookie files that may have already been created. Moreover any data you post using forms available on this site will be stored. If you wish them to be deleted please kindly let us know in e-mail message sent to mickaj@mkajzer.com.</value>
   </data>
   <data name="provideAddress" xml:space="preserve">
     <value>Let us know collection address and date</value>

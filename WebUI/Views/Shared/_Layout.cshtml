@@ -13,10 +13,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>@Localizer["appTitle"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/style.css" />
     <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml">
 </head>
 <body>
+    <div class="alert alert-warning fixed-top sticky-top" role="alert">
+        <h3 class="alert-heading">@Localizer["demoWarning"]</h3>
+        <p>@Localizer["demoWarningMessage"]</p>
+        <hr>
+        <h3 class="alert-heading">@Localizer["privacyWarning"]</h3>
+        <p class="mb-0">@Localizer["privacyWarningMessage"]</p>
+    </div>
     <header class="@ViewBag.HeaderClass">
         <nav class="container container--70">
 

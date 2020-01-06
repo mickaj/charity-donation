@@ -195,6 +195,12 @@
   <data name="decideWhoToHelp" xml:space="preserve">
     <value>Zdecyduj komu chcesz pomóc</value>
   </data>
+  <data name="demoWarning" xml:space="preserve">
+    <value>To jest demonstracja!</value>
+  </data>
+  <data name="demoWarningMessage" xml:space="preserve">
+    <value>Ta aplikacja to tylko demonstracja. Żadna z czynności przeprowadzona przez uzytkownika w tej aplikacji nie prowadzi do żadnych czynności podjętych przez kogokolwiek. Ta aplikacja używana jest jedynie w celach demonstracyjnych i testowych.</value>
+  </data>
   <data name="donateLink" xml:space="preserve">
     <value>Przekaż dary</value>
   </data>
@@ -295,6 +301,12 @@
   <data name="pickOneInstitutionForm" xml:space="preserve">
     <value>Wybierz jedną, do
                 której trafi Twoja przesyłka.</value>
+  </data>
+  <data name="privacyWarning" xml:space="preserve">
+    <value>Prywatność i ciasteczka</value>
+  </data>
+  <data name="privacyWarningMessage" xml:space="preserve">
+    <value>Ta aplikacja wykorzystuje pliki cookies (ciasteczka). Jeśli nie wyrażasz na to zgody, opuść tę stronę oraz usuń utworzone cookies (ciasteczka). Ponadto dane, które wysyłasz za pomocą formularzy dostępnych na stronie będą przechowywane. Jeśli chcesz usunąć przesłane już dane, poinformuj mnie o tym w wiadomości e-mail na adres mickaj@mkajzer.com.</value>
   </data>
   <data name="provideAddress" xml:space="preserve">
     <value>Podaj adres oraz termin odbioru rzeczy przez kuriera:</value>
