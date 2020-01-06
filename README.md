@@ -1,6 +1,8 @@
 # charity-donation
 Sample web app project where users can donate items for charity
 
+Live demo: http://charity.mkajzer.hostingasp.pl/
+
 ## IDEA
 
 * User has some stuff that he/she no longer uses, but are still in usable and in good conditon. The user would like to donate them to charity but doesn't know where and how.
