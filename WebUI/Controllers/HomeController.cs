@@ -67,5 +67,12 @@ namespace WebUI.Controllers
             _messagesService.AddMessage(messageData.Name, messageData.LastName, messageData.Message);
             return PartialView("_MessagePostedPartial");
         }
+
+        [HttpGet]
+        public IActionResult SwitchLanguage(string culture)
+        {
+            HttpContext.Response.Cookies.Append(".AspNetCore.Culture", $"c={culture}|uic={culture}");
+            return RedirectToAction("Index");
+        }
     }
 }
