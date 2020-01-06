@@ -238,7 +238,7 @@
     <value>Log in</value>
   </data>
   <data name="loginSuccessMessage" xml:space="preserve">
-    <value>You've been sucessfull logged in.</value>
+    <value>You've been successfully logged in.</value>
   </data>
   <data name="logoutLink" xml:space="preserve">
     <value>Log out</value>
@@ -301,7 +301,7 @@
     <value>Fill all necessary pieces fo information</value>
   </data>
   <data name="provideNumberOfBags" xml:space="preserve">
-    <value>Let us know number og 60 ltr bags you pack your thins into:</value>
+    <value>Let us know number of 60 ltr bags you pack your thins into:</value>
   </data>
   <data name="recoverPasswordLink" xml:space="preserve">
     <value>Rest password</value>
@@ -328,7 +328,7 @@
     <value>Sign up</value>
   </data>
   <data name="sloganFormLine" xml:space="preserve">
-    <value>Oddaj rzeczy, których już nie chcesz&lt;br /&gt;&lt;span class="uppercase"&gt;potrzebującym&lt;/span&gt;</value>
+    <value>Giva away things you don't need to &lt;br /&gt;&lt;span class="uppercase"&gt;CHARITY&lt;/span&gt;</value>
   </data>
   <data name="sloganLine" xml:space="preserve">
     <value>Start donating!</value>
